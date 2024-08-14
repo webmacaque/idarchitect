@@ -19,6 +19,7 @@ class ProjectTypesTableSeeder extends Seeder
         DB::table(self::TABLE_NAME)->insert([
             'slug' => Str::slug($name),
             'name' => $name,
+            'short_name' => 'Архитектуры',
             'sort' => 10,
             'created_at' => now()
         ]);
@@ -27,6 +28,7 @@ class ProjectTypesTableSeeder extends Seeder
         DB::table(self::TABLE_NAME)->insert([
             'slug' => Str::slug($name),
             'name' => $name,
+            'short_name' => 'Интерьеры',
             'sort' => 20,
             'created_at' => now()
         ]);

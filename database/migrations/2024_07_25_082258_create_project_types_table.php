@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('slug')->unique();
             $table->string('name');
+            $table->string('short_name');
             $table->integer('sort');
             $table->timestamps();
         });
