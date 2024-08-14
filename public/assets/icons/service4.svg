@@ -1,0 +1,18 @@
+<svg width="90" height="97" viewBox="0 0 90 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.71 19.3698C10.53 19.4798 13.29 19.7298 15.9 17.9898C18.78 16.0698 20.07 12.6698 19.8 9.61985C19.43 5.38985 16.09 2.12985 12.35 1.24985C9.49 0.579846 6.36 1.27985 4.21 3.07985C1.94 4.98985 1 8.92985 1 8.92985V93.8298C1 94.7498 1.74 95.4898 2.66 95.4898H69.16C70.08 95.4898 70.82 94.7498 70.82 93.8298V19.3698" stroke="white" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M71.1802 1.56982C76.1402 1.56982 80.1602 5.58982 80.1602 10.5498C80.1602 15.5098 76.1402 19.5298 71.1802 19.5298" stroke="white" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M9.70996 19.3699L72.21 19.4799" stroke="white" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M71.18 1.56985L8.79004 1.09985" stroke="white" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M89.5098 38.2798H77.0098V83.4498H89.5098V38.2798Z" stroke="white" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M77.0098 38.0198L83.1698 26.0898C83.2098 26.0098 83.3198 26.0098 83.3498 26.0898L89.5098 38.0198" stroke="white" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M89.5098 90.3698V83.4498" stroke="white" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M89.5098 90.1298V90.3699C89.4698 90.8699 89.2698 92.7199 87.7598 94.1199C86.3498 95.4199 84.5298 95.5199 83.7398 95.5699C83.4198 95.5899 83.0998 95.5899 82.7798 95.5699C81.8498 95.5099 80.1698 95.3999 78.7598 94.1199C78.6698 94.0399 77.0698 92.5299 77.0098 90.3699C77.0098 90.2699 77.0098 89.9998 77.0098 90.1298" stroke="white" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M77.0098 83.4598V90.1298" stroke="white" stroke-miterlimit="10" stroke-linejoin="round"/>
+<rect x="9.5" y="29.5" width="53" height="55" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+<rect x="17.5" y="36.5" width="13" height="13" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+<rect x="42.5" y="36.5" width="13" height="13" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+<rect x="42.5" y="64.5" width="13" height="13" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+<path d="M54 50L54 64" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+<path d="M20 49V76" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+<path d="M20 76H42" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+</svg>
