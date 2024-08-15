@@ -10,6 +10,9 @@ class ProjectPhoto extends Model
 {
     use HasFactory;
 
+    /**
+     * Проект, которому принадлежит фото
+     */
     public function project()
     {
         $this->belongsTo(Project::class);

@@ -21,9 +21,16 @@ class ProjectController extends Controller
 
     public function projectType($slug)
     {
+        $projectTypes = ProjectType::orderBy('sort', 'asc')->get();
         $projectType = ProjectType::where('slug', $slug)->first();
+        $projects = Project::where('project_type_id', $projectType->id)
+            ->published()
+            ->ordered()
+            ->paginate(12);
 
         return view('project-type')
-            ->with('projects', $projectType);
+            ->with('projectTypes', $projectTypes)
+            ->with('currentType', $projectType)
+            ->with('currentProjects', $projects);
     }
 }
