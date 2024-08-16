@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\ProjectPhotoType;
 use App\Models\ProjectType;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -32,5 +34,24 @@ class ProjectController extends Controller
             ->with('projectTypes', $projectTypes)
             ->with('currentType', $projectType)
             ->with('currentProjects', $projects);
+    }
+
+    public function project($typeSlug, $slug)
+    {
+        $backUrl = (URL::previous() === route('project-type', $typeSlug))? URL::previous() : route('index');
+        $projectType = ProjectType::where('slug', $typeSlug)->first();
+        $project = $projectType->projects()->where('slug', $slug)->first();
+        $photoTypes = ProjectPhotoType::orderBy('sort')->get();
+        $photos = [];
+        foreach ($photoTypes as $type) {
+            $photos[$type->slug] = $project->photosByType($type->slug)->get();
+        }
+
+        return view('project')
+            ->with('backUrl', $backUrl)
+            ->with('projectType', $projectType)
+            ->with('project', $project)
+            ->with('photoTypes', $photoTypes)
+            ->with('photos', $photos);
     }
 }

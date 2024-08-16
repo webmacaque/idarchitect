@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+@section('headerStyles')
     <link rel="stylesheet" href="/styles/normalize.css" />
     <link rel="stylesheet" href="/styles/fonts.css" />
     <link rel="stylesheet" href="/styles/style.css" />
+@show
     <title>ID Architects</title>
 </head>
 <body>
@@ -98,7 +100,12 @@
 </footer>
 
 @yield('footerStyles')
-@yield('footerScripts')
+@section('footerScripts')
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyAHFeM7mawK3A9rRcR_F1iaeBQIJBzeFDY"></script>
+    <script src="/assets/scripts/index.js"></script>
+@show
 </body>
 </html>
 

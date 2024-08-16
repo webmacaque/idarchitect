@@ -17,4 +17,9 @@ class ProjectPhoto extends Model
     {
         $this->belongsTo(Project::class);
     }
+
+    public function photoType()
+    {
+        $this->belongsTo(ProjectPhotoType::class);
+    }
 }

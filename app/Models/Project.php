@@ -30,9 +30,16 @@ class Project extends Model
     /**
      * Фото проекта
      */
-    public function projectPhoto()
+    public function projectPhotos()
     {
         return $this->hasMany(ProjectPhoto::class);
+    }
+
+    public function photosByType($photoTypeSlug)
+    {
+        return $this->hasMany(ProjectPhoto::class)
+            ->join('project_photo_types', 'project_photos.project_photo_type_id', '=', 'project_photo_types.id')
+            ->where('project_photo_types.slug', $photoTypeSlug);
     }
 
     /**

@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProjectController::class, 'index'])->name('index');
 
+Route::get('/projects/{typeSlug}/project/{slug}', [ProjectController::class, 'project'])->name('project');
 Route::get('/projects/{slug}', [ProjectController::class, 'projectType'])->name('project-type');
-Route::get('/projects/{type-slug}/project/{slug}', [ProjectController::class, 'project'])->name('project');
 
 Route::get('/test/', function () {
     return [
