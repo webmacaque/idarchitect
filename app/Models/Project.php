@@ -30,7 +30,7 @@ class Project extends Model
     /**
      * Фото проекта
      */
-    public function projectPhotos()
+    public function photos()
     {
         return $this->hasMany(ProjectPhoto::class);
     }

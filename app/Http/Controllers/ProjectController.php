@@ -6,7 +6,6 @@ use App\Models\Project;
 use App\Models\ProjectPhotoType;
 use App\Models\ProjectType;
 use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
