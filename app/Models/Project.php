@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 class Project extends Model
 {
@@ -30,7 +32,7 @@ class Project extends Model
     /**
      * Фото проекта
      */
-    public function photos()
+    public function projectPhoto()
     {
         return $this->hasMany(ProjectPhoto::class);
     }
@@ -38,8 +40,9 @@ class Project extends Model
     public function photosByType($photoTypeSlug)
     {
         return $this->hasMany(ProjectPhoto::class)
-            ->join('project_photo_types', 'project_photos.project_photo_type_id', '=', 'project_photo_types.id')
-            ->where('project_photo_types.slug', $photoTypeSlug);
+            ->whereHas('projectPhotoType', function($query) use ($photoTypeSlug) {
+                return $query->where('slug', $photoTypeSlug);
+            });
     }
 
     /**
@@ -78,4 +81,16 @@ class Project extends Model
             ->groupBy('projects.id')
             ->take(3);
     }
+
+    public function getPhotosGroupedByType()
+    {
+        $photos = $this->projectPhoto()->get();
+        $groupedPhotos = [];
+        foreach ($photos as $photo) {
+            $slug = $photo->projectPhotoType->slug;
+            $groupedPhotos[$slug][] = $photo;
+        }
+        return $groupedPhotos;
+    }
+
 }

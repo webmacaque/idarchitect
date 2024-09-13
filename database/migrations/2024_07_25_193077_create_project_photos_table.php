@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('project_photos', function (Blueprint $table) {
             $table->id();
             $table->string('path');
+            $table->string('filename');
             $table->boolean('main')->default(false);
             $table->foreignId('project_photo_type_id')
                 ->references('id')

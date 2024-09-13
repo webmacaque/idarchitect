@@ -27,7 +27,8 @@ class ProjectController extends Controller
         $projects = Project::where('project_type_id', $projectType->id)
             ->published()
             ->ordered()
-            ->paginate(12);
+            ->paginate(12)
+            ->onEachSide(PHP_INT_MAX);
 
         return view('project-type')
             ->with('projectTypes', $projectTypes)

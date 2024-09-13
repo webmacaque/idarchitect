@@ -15,11 +15,11 @@ class ProjectPhoto extends Model
      */
     public function project()
     {
-        $this->belongsTo(Project::class);
+        return $this->belongsTo(Project::class);
     }
 
     public function projectPhotoType()
     {
-        $this->belongsTo(ProjectPhotoType::class);
+        return $this->belongsTo(ProjectPhotoType::class);
     }
 }

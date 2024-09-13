@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminProjectController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
@@ -8,9 +9,13 @@ Route::get('/', [ProjectController::class, 'index'])->name('index');
 Route::get('/projects/{typeSlug}/project/{slug}', [ProjectController::class, 'project'])->name('project');
 Route::get('/projects/{slug}', [ProjectController::class, 'projectType'])->name('project-type');
 
-Route::get('/test/', function () {
-    return [
-        fake()->slug,
-        fake()->imageUrl
-        ];
-});
+Route::get('/admin/projects', [AdminProjectController::class, 'projects'])->name('admin-projects');
+Route::get('/admin/projects/create', [AdminProjectController::class, 'createForm'])->name('admin-projects-create-form');
+Route::get('/admin/projects/{id}', [AdminProjectController::class, 'project'])->name('admin-projects-item')->where('id', '[0-9]+');
+Route::get('/admin/projects/{id}/edit', [AdminProjectController::class, 'editForm'])->name('admin-projects-item-edit-form')->where('id', '[0-9]+');
+Route::get('/admin/projects/{id}/preview', [AdminProjectController::class, 'preview'])->name('admin-projects-item-preview')->where('id', '[0-9]+');
+
+
+Route::post('/admin/projects/create', [AdminProjectController::class, 'create'])->name('admin-projects-create-action');
+Route::post('/admin/projects/{id}/edit', [AdminProjectController::class, 'edit'])->name('admin-projects-edit-action')->where('id', '[0-9]+');
+

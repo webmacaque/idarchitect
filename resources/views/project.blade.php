@@ -48,6 +48,7 @@
                                     alt="panorama"
                                 />
                             @endforeach
+                        </div>
                     @endunless
                 @endif
             @endforeach

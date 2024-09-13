@@ -19,6 +19,7 @@ class ProjectPhotoFactory extends Factory
     {
         return [
             'path' => fake()->imageUrl(),
+            'filename' => fake()->word,
             'project_photo_type_id' => ProjectPhotoType::all()->shuffle()->first->id
         ];
     }
