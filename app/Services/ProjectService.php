@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 
 class ProjectService
@@ -22,6 +23,13 @@ class ProjectService
         $this->project = $project;
     }
 
+    /**
+     * @return Project
+     */
+    public function getProject(): Project
+    {
+        return $this->project;
+    }
 
     public function publish() {
         $this->project->is_published = true;
@@ -41,6 +49,21 @@ class ProjectService
         $this->project->year = $request->year;
         $this->project->home_page = $request->home_page;
         $this->project->save();
+    }
+
+    public static function create(Request $request) : ProjectService
+    {
+        $project = new Project();
+        $project->name = $request->name;
+        $project->slug = Str::slug("{$request->name} {$request->year}");
+        $project->project_type_id = $request->type;
+        $project->short_description = $request->short_description;
+        $project->description = $request->description;
+        $project->year = $request->year;
+        $project->home_page = $request->home_page;
+        $project->save();
+
+        return new self($project);
     }
 
     public function setMainPhoto($photoId)

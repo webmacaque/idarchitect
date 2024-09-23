@@ -119,3 +119,5 @@
         );
     </script>
 @endsection
+
+@section('menu_projects', 'active')

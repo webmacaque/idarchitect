@@ -157,3 +157,5 @@
         </form>
     </div>
 @endsection
+
+@section('menu_projects', 'active')

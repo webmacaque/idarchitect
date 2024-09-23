@@ -89,15 +89,23 @@ class AdminProjectController extends Controller
 
     public function create(Request $request)
     {
-        dump($request->file('photo'));
-        dump($request->hasFile('photo'));
-        dump($request->file('photo')[0]->isValid());
+        $projectService = ProjectService::create($request);
+        if ($request->has('photo')) {
+            foreach ($request->photo as $photoType=>$photoFiles) {
+                foreach ($photoFiles as $photoFile) {
+                    $projectService->addPhoto($photoFile, $photoType);
+                }
+            }
+        }
 
+        if ($request->has('action-publish')) {
+            $projectService->publish();
+        }
+
+        return redirect()->route('admin-projects-item-preview', ['id' => $projectService->getProject()->id]);
     }
 
     public function edit(Request $request, $id) {
-        dump($request->all());
-        dump($request->allFiles());
         $project = Project::find($id);
         $projectService = new ProjectService($project);
         if ($request->has('action-publish')) {

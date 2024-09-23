@@ -1,51 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/admin/styles/normalize.css" />
-    <link rel="stylesheet" href="/admin/styles/fonts.css" />
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
-    />
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"
-    />
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
-    />
-    <link rel="stylesheet" href="/admin/styles/style.css" />
-    <title>ID Architects</title>
-</head>
-<body>
-<header class="header">
-    <div class="content header-content">
-        <a href="/">
-            <img src="/admin/assets/svg/logo.svg" alt="logo" />
-        </a>
-        <nav class="header-menu">
-            <a href="#" class="header-menu__link active">Список проектов</a>
-            <a href="#" class="header-menu__link">Список администраторов</a>
-        </nav>
-    </div>
-</header>
-@if($project->home_page)
-<div
-    class="project-top"
-    style="background-image: url('{{$project->mainPhoto->path}}')"
->
-    <div class="content project-top-content">
-        <div class="slide-content">
-            <span class="slide-content__title">{{$project->name}}</span>
-            <div class="slide-content__description">{{$project->description}}</div>
-        </div>
-    </div>
-</div>
-@endif
-<div class="content">
+@extends('layouts.admin')
+
+@section('content')
     <div class="page-top">
         <a href="{{route('admin-projects')}}" class="page-top-back">
             <img src="/admin/assets/svg/back.svg" alt="back" />
@@ -120,32 +75,64 @@
             </form>
         </div>
     </footer>
-</div>
+@endsection
 
-<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-<script src="/admin/assets/scripts/index.js"></script>
+@section('home_page_preview')
+    @if($project->home_page)
+        <div
+            class="project-top"
+            style="background-image: url('{{$project->mainPhoto->path}}')"
+        >
+            <div class="content project-top-content">
+                <div class="slide-content">
+                    <span class="slide-content__title">{{$project->name}}</span>
+                    <div class="slide-content__description">{{$project->description}}</div>
+                </div>
+            </div>
+        </div>
+    @endif
+@endsection
 
-<script>
-    const img = document.querySelectorAll(".panorama-list__element");
-    img.forEach((element) => {
-        element.addEventListener("click", () => {
-            pannellum.viewer("panorama", {
-                type: "equirectangular",
-                panorama: element.dataset.image,
-                autoLoad: true,
+@section('scripts')
+    @parent
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        const img = document.querySelectorAll(".panorama-list__element");
+        img.forEach((element) => {
+            element.addEventListener("click", () => {
+                pannellum.viewer("panorama", {
+                    type: "equirectangular",
+                    panorama: element.dataset.image,
+                    autoLoad: true,
+                });
             });
         });
-    });
 
-    pannellum.viewer("panorama", {
-        type: "equirectangular",
-        panorama: img[0].src,
-        autoLoad: true,
-    });
+        if (img.length > 0) {
+            pannellum.viewer("panorama", {
+                type: "equirectangular",
+                panorama: img[0].src,
+                autoLoad: true,
+            });
+        }
 
-    Fancybox.bind("[data-fancybox]", {});
-</script>
-</body>
-</html>
+        Fancybox.bind("[data-fancybox]", {});
+    </script>
+@endsection
+
+@section('styles')
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"
+    />
+
+    @parent
+@endsection
+
+@section('menu_projects', 'active')
+

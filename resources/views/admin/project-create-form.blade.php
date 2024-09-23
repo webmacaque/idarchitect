@@ -28,7 +28,7 @@
                 required
                 placeholder="Введите краткое описание проекта *"
             />
-            <select required class="select-year">
+            <select required class="select-year" name="year">
                 @for($i=$currentYear; $i>$currentYear-20; $i--)
                     <option value="{{$i}}">{{$i}}</option>
                 @endfor
@@ -71,7 +71,7 @@
 
         <div class="create-bottom">
             <button class="button" type="submit">Создать проект</button>
-            <button class="button">Опубликовать</button>
+            <button class="button" name="action-publish">Опубликовать</button>
         </div>
     </form>
 @endsection
@@ -95,4 +95,6 @@
         });
     </script>
 @endsection
+
+@section('menu_projects', 'active')
 
