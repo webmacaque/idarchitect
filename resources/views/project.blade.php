@@ -87,14 +87,14 @@
                 });
             });
         });
-        console.log(img);
 
-
-        pannellum.viewer("panorama", {
-            type: "equirectangular",
-            panorama: img[0].src,
-            autoLoad: true,
-        });
+        if (img.length > 0) {
+            pannellum.viewer("panorama", {
+                type: "equirectangular",
+                panorama: img[0].src,
+                autoLoad: true,
+            });
+        }
     </script>
     @endif
 @endsection
