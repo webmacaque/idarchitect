@@ -25,19 +25,11 @@
 @endsection
 
 @section('footer')
-    <div id="overlay" class="overlay"></div>
-
-    <div id="modal" class="modal" popover="manual">
-        <span class="modal__title">Удаление администратора</span>
-        <div class="modal__description">
-            Вы действительно хотите удалить администратора?
-        </div>
-        <form class="modal-buttons" action="{{route('admin-users-delete')}}" method="post">
-            @csrf
-            <button class="button" type="submit">Да</button>
-            <a class="button white" id="closeModalBtn">Нет</a>
-        </form>
-    </div>
+    @include('admin.delete-modal', [
+    'title'=>'Удаление администратора',
+    'description' => 'Вы действительно хотите удалить администратора?',
+    'action' => route('admin-users-delete')
+    ])
 @endsection
 
 @section('menu_users', 'active')

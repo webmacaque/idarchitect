@@ -31,20 +31,5 @@
     </div>
 @endsection
 
-@section('footer')
-    <div id="overlay" class="overlay"></div>
-
-    <div id="modal" class="modal" popover="manual">
-        <span class="modal__title">Удаление администратора</span>
-        <div class="modal__description">
-            Вы действительно хотите удалить администратора?
-        </div>
-        <form class="modal-buttons">
-            <button class="button">Да</button>
-            <button class="button white" id="closeModalBtn">Нет</button>
-        </form>
-    </div>
-@endsection
-
 @section('menu_users', 'active')
 

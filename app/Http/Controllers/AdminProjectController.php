@@ -3,15 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
-use App\Models\ProjectPhoto;
 use App\Models\ProjectPhotoType;
 use App\Models\ProjectType;
 use App\Services\ProjectService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 
 class AdminProjectController extends Controller
 {
@@ -19,7 +15,7 @@ class AdminProjectController extends Controller
     public function projects(Request $request)
     {
         $projectTypes = ProjectType::orderBy('sort', 'asc')->get();
-        $projects = $this->getProjects($request)->paginate(2)->onEachSide(PHP_INT_MAX);
+        $projects = $this->getProjects($request)->paginate(10)->onEachSide(PHP_INT_MAX);
         $backgrounds = ['', 'gray'];
         $typesBgs = [];
         foreach ($projectTypes as $key=>$type) {
@@ -139,5 +135,13 @@ class AdminProjectController extends Controller
         }
         return redirect()->route('admin-projects-item-preview', ['id' => $id]);
 
+    }
+
+    public function delete(Request $request)
+    {
+        $project = Project::find($request->remove);
+        $project?->delete();
+
+        return redirect()->route('admin-projects');
     }
 }

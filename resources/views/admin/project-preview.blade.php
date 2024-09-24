@@ -56,25 +56,11 @@
             <a href="{{route('admin-projects-item-edit-form', $project->id)}}" class="button square white" title="Редактировать">
                 <img src="/admin/assets/svg/edit.svg" />
             </a>
-            <a href="#" class="button square white open-modal" title="Удалить">
+            <a href="#" class="button square white open-modal" title="Удалить" data-remove="{{$project->id}}">
                 <img src="/admin/assets/svg/remove.svg" />
             </a>
         </div>
     </div>
-    <footer>
-        <div id="overlay" class="overlay"></div>
-
-        <div id="modal" class="modal" popover="manual">
-            <span class="modal__title">Удаление проекта</span>
-            <div class="modal__description">
-                Вы действительно хотите удалить всю информацию о выбранном проекте?
-            </div>
-            <form class="modal-buttons">
-                <button class="button">Да</button>
-                <button class="button white" id="closeModalBtn">Нет</button>
-            </form>
-        </div>
-    </footer>
 @endsection
 
 @section('home_page_preview')
@@ -91,6 +77,14 @@
             </div>
         </div>
     @endif
+@endsection
+
+@section('footer')
+    @include('admin.delete-modal', [
+    'title'=>'Удаление проекта',
+    'description' => 'Вы действительно хотите удалить всю информацию о выбранном проекте?',
+    'action' => route('admin-projects-delete')
+    ])
 @endsection
 
 @section('scripts')
