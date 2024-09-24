@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminProjectController;
+use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,15 @@ Route::get('/admin/projects/{id}', [AdminProjectController::class, 'project'])->
 Route::get('/admin/projects/{id}/edit', [AdminProjectController::class, 'editForm'])->name('admin-projects-item-edit-form')->where('id', '[0-9]+');
 Route::get('/admin/projects/{id}/preview', [AdminProjectController::class, 'preview'])->name('admin-projects-item-preview')->where('id', '[0-9]+');
 
-
 Route::post('/admin/projects/create', [AdminProjectController::class, 'create'])->name('admin-projects-create-action');
 Route::post('/admin/projects/{id}/edit', [AdminProjectController::class, 'edit'])->name('admin-projects-edit-action')->where('id', '[0-9]+');
+Route::post('/admin/projects/delete', [AdminProjectController::class, 'delete'])->name('admin-projects-delete');
+
+Route::get('/admin/users', [AdminUserController::class, 'users'])->name('admin-users');
+Route::get('/admin/users/create', [AdminUserController::class, 'createForm'])->name('admin-users-create-form');
+Route::get('/admin/users/{id}/edit', [AdminUserController::class, 'editForm'])->name('admin-users-item-edit-form')->where('id', '[0-9]+');
+
+Route::post('/admin/users/create', [AdminUserController::class, 'create'])->name('admin-users-create-action');
+Route::post('/admin/users/{id}/edit', [AdminUserController::class, 'edit'])->name('admin-users-item-edit-action')->where('id', '[0-9]+');
+Route::post('/admin/users/delete', [AdminUserController::class, 'delete'])->name('admin-users-delete');
 
