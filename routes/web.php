@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminProjectController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ExecuteArtisanCommandController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Middleware\OnlyAuth;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,8 @@ Route::middleware('auth')->group(function() {
 
     Route::get('/admin/logout', [AuthController::class, 'logout'])->name('logout');
 });
+
+Route::get('/run-command/{name_of_command}', ExecuteArtisanCommandController::class);
 
 
 
