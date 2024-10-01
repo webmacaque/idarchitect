@@ -23,7 +23,7 @@ class ProjectController extends Controller
     public function projectType($slug)
     {
         $projectTypes = ProjectType::orderBy('sort', 'asc')->get();
-        $projectType = ProjectType::where('slug', $slug)->first();
+        $projectType = ProjectType::where('slug', $slug)->firstOrFail();
         $projects = Project::where('project_type_id', $projectType->id)
             ->published()
             ->ordered()
@@ -40,7 +40,7 @@ class ProjectController extends Controller
     {
         $backUrl = (URL::previous() === route('project-type', $typeSlug))? URL::previous() : route('index');
         $projectType = ProjectType::where('slug', $typeSlug)->first();
-        $project = $projectType->projects()->where('slug', $slug)->first();
+        $project = $projectType->projects()->where('slug', $slug)->firstOrFail();
         $photoTypes = ProjectPhotoType::orderBy('sort')->get();
         $photos = [];
         foreach ($photoTypes as $type) {
