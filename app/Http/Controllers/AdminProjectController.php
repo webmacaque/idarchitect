@@ -73,8 +73,8 @@ class AdminProjectController extends Controller
 
     public function preview($id)
     {
+        $project = Project::findOrFail($id);
         $photoTypes = ProjectPhotoType::orderBy('sort')->get();
-        $project = Project::find($id);
         $photos = $project->getPhotosGroupedByType();
 
         return view('admin.project-preview')
@@ -102,7 +102,7 @@ class AdminProjectController extends Controller
     }
 
     public function edit(Request $request, $id) {
-        $project = Project::find($id);
+        $project = Project::findOrFail($id);
         $projectService = new ProjectService($project);
         if ($request->has('action-publish')) {
             $projectService->publish();
@@ -139,8 +139,9 @@ class AdminProjectController extends Controller
 
     public function delete(Request $request)
     {
-        $project = Project::find($request->remove);
-        $project?->delete();
+        $project = Project::findOrFail($request->remove);
+        $projectService = new ProjectService($project);
+        $projectService->delete();
 
         return redirect()->route('admin-projects');
     }

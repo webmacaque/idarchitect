@@ -15,9 +15,6 @@ class ProjectService
 {
     private Project $project;
 
-    /**
-     * @param $id
-     */
     public function __construct(Project $project)
     {
         $this->project = $project;
@@ -64,6 +61,18 @@ class ProjectService
         $project->save();
 
         return new self($project);
+    }
+
+    public function delete()
+    {
+        $projectId = $this->project->id;
+        $photoIds = ProjectPhoto::where('project_id', $projectId)
+            ->get()
+            ->map(function (ProjectPhoto $photo) {
+                return $photo->id;
+            });
+        $this->removePhotos($photoIds);
+        $this->project?->delete();
     }
 
     public function setMainPhoto($photoId)
