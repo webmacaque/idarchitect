@@ -11,7 +11,7 @@
 <body>
 <div class="wrapper-login">
     <div class="login">
-        <img class="login__logo" src="/admin/assets/svg/logo.svg" alt="logo" />
+        <a href="{{route('index')}}"><img class="login__logo" src="/admin/assets/svg/logo.svg" alt="logo" /></a>
         <form class="login-content" action="" method="post">
             @csrf
             @error('login'){{$message}}@enderror

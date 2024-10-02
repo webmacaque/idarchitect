@@ -36,7 +36,7 @@
 </div>
 <header class="header">
     <div class="content header-content">
-        <a href="/">
+        <a href="{{route('index')}}">
             <img
                 class="header-logo"
                 src="/assets/svg/logo.svg"
