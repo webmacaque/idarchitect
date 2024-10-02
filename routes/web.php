@@ -3,7 +3,6 @@
 use App\Http\Controllers\AdminProjectController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ExecuteArtisanCommandController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Middleware\OnlyAuth;
 use Illuminate\Support\Facades\Route;
@@ -13,6 +12,7 @@ Route::get('/', [ProjectController::class, 'index'])->name('index');
 Route::get('/projects/{typeSlug}/project/{slug}', [ProjectController::class, 'project'])->name('project');
 Route::get('/projects/{slug}', [ProjectController::class, 'projectType'])->name('project-type');
 
+Route::redirect('/login', '/admin/login');
 Route::get('/admin/login', [AuthController::class, 'loginForm'])->name('login-form');
 Route::post('/admin/login', [AuthController::class, 'login'])->name('login-action');
 
@@ -38,7 +38,6 @@ Route::middleware('auth')->group(function() {
     Route::get('/admin/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-Route::get('/run-command/{name_of_command}', ExecuteArtisanCommandController::class);
 
 
 
