@@ -39,7 +39,7 @@ class ProjectController extends Controller
     public function project($typeSlug, $slug)
     {
         $backUrl = (URL::previous() === route('project-type', $typeSlug))? URL::previous() : route('index');
-        $projectType = ProjectType::where('slug', $typeSlug)->first();
+        $projectType = ProjectType::where('slug', $typeSlug)->firstOrFail();
         $project = $projectType->projects()->where('slug', $slug)->firstOrFail();
         $photoTypes = ProjectPhotoType::orderBy('sort')->get();
         $photos = [];
