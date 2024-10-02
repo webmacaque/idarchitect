@@ -23,6 +23,7 @@
         <nav class="header-menu">
             <a href="{{route('admin-projects')}}" class="header-menu__link @yield('menu_projects','')">Список проектов</a>
             <a href="{{route('admin-users')}}" class="header-menu__link @yield('menu_users','')">Список администраторов</a>
+            <a href="{{route('logout')}}" class="header-menu__link ">Выйти</a>
         </nav>
     </div>
 </header>
