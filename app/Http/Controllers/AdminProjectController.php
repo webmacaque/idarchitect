@@ -61,7 +61,7 @@ class AdminProjectController extends Controller
     {
         $projectTypes = ProjectType::orderBy('sort')->get();
         $photoTypes = ProjectPhotoType::orderBy('sort')->get();
-        $project = Project::find($id);
+        $project = Project::findOrFail($id);
 
         $currentYear = Carbon::now()->year;
         return view('admin.project-edit-form')
