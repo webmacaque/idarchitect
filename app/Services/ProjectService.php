@@ -39,10 +39,10 @@ class ProjectService
     }
 
     public function save(Request $request) {
-        $this->project->name = $request->name;
+        $this->project->name = Str::trim($request->name);
         $this->project->project_type_id = $request->type;
-        $this->project->short_description = $request->short_description;
-        $this->project->description = $request->description;
+        $this->project->short_description = Str::trim($request->short_description);
+        $this->project->description = Str::trim($request->description);
         $this->project->year = $request->year;
         $this->project->home_page = $request->home_page;
         $this->project->save();
@@ -51,11 +51,11 @@ class ProjectService
     public static function create(Request $request) : ProjectService
     {
         $project = new Project();
-        $project->name = $request->name;
-        $project->slug = Str::slug("{$request->name} {$request->year}");
+        $project->name = Str::trim($request->name);
+        $project->slug = Str::slug("{$project->name} {$request->year}");
         $project->project_type_id = $request->type;
-        $project->short_description = $request->short_description;
-        $project->description = $request->description;
+        $project->short_description = Str::trim($request->short_description);
+        $project->description = Str::trim($request->description);
         $project->year = $request->year;
         $project->home_page = $request->home_page;
         $project->save();
