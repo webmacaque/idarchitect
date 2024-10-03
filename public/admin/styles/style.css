@@ -828,6 +828,11 @@ footer {
   height: 140px;
   object-fit: cover;
   cursor: pointer;
+    opacity: 0.5;
+}
+
+.panorama-list__element.active {
+    opacity: 1;
 }
 
 .project-bottom {

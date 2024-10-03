@@ -102,6 +102,12 @@
                     panorama: element.dataset.image,
                     autoLoad: true,
                 });
+
+
+                img.forEach((element) => {
+                    element.classList.remove("active");
+                });
+                element.classList.add('active');
             });
         });
 
@@ -111,6 +117,8 @@
                 panorama: img[0].src,
                 autoLoad: true,
             });
+
+            img[0].classList.add('active');
         }
 
         Fancybox.bind("[data-fancybox]", {});
