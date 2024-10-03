@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('name');
             $table->string('short_description');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->year('year');
             $table->boolean('home_page')->default(false);
             $table->foreignId('project_type_id')->nullable()
