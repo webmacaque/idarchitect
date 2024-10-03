@@ -40,6 +40,7 @@ class ProjectService
 
     public function save(Request $request) {
         $this->project->name = Str::trim($request->name);
+        $this->project->slug = Str::slug("{$this->project->name} {$request->year}");
         $this->project->project_type_id = $request->type;
         $this->project->short_description = Str::trim($request->short_description);
         $this->project->description = Str::trim($request->description);
