@@ -980,8 +980,13 @@ img {
   height: 140px;
   object-fit: cover;
   cursor: pointer;
+    opacity: 0.5;
   @media screen and (max-width: 767px) {
     width: 115px;
     height: 115px;
   }
+}
+
+.panorama-list__element.active {
+    opacity: 1;
 }
