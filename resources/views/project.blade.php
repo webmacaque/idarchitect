@@ -81,6 +81,11 @@
     <script>
         const img = document.querySelectorAll(".panorama-list__element");
         img.forEach((element) => {
+            img.forEach((element) => {
+                element.classList.remove("active");
+            });
+            element.classList.add('active');
+
             element.addEventListener("click", () => {
                 pannellum.viewer("panorama", {
                     type: "equirectangular",
@@ -88,21 +93,17 @@
                     autoLoad: true,
                 });
 
-                img.forEach((element) => {
-                    element.classList.remove("active");
-                });
-                element.classList.add('active');
+
             });
         });
 
         if (img.length > 0) {
+            img[0].classList.add('active');
             pannellum.viewer("panorama", {
                 type: "equirectangular",
                 panorama: img[0].src,
                 autoLoad: true,
             });
-
-            img[0].classList.add('active');
         }
     </script>
     @endif
