@@ -21,7 +21,9 @@
                     <span class="page-top-info__year">{{$project->short_description}} / {{$project->year}}</span>
                 </div>
             </div>
+            @unless(empty($project->description))
             <div class="project-description">{{$project->description}}</div>
+            @endunless
             @foreach($photoTypes as $type)
                 @if($photos[$type->slug]->isNotEmpty())
                     <span class="project-title">{{$type->name}}</span>
