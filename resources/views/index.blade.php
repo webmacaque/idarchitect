@@ -144,7 +144,7 @@
                                     src="{{ $project->mainPhoto->path }}"
                                     alt="slide"
                                 />
-                                <span class="gallery-slider__name">"{{$project->name}}"</span>
+                                <span class="gallery-slider__name">{{$project->name}}</span>
                                 <span class="gallery-slider__year"
                                 >{{$project->short_description}} / {{$project->year}}</span
                                 >
