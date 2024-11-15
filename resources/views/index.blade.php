@@ -204,8 +204,8 @@
               src="./assets/images/team1.png"
               alt="team"
             />
-            <span class="team-people-element__name">Иван</span>
-            <span class="team-people-element__who">Руководитель</span>
+{{--            <span class="team-people-element__name">Иван</span>--}}
+{{--            <span class="team-people-element__who">Руководитель</span>--}}
           </div>
           <div class="team-people-element">
             <img
@@ -213,8 +213,8 @@
               src="./assets/images/team2.png"
               alt="team"
             />
-            <span class="team-people-element__name">Алина</span>
-            <span class="team-people-element__who">Менеджер</span>
+{{--            <span class="team-people-element__name">Алина</span>--}}
+{{--            <span class="team-people-element__who">Менеджер</span>--}}
           </div>
           <div class="team-people-element">
             <img
@@ -222,17 +222,17 @@
               src="./assets/images/team3.png"
               alt="team"
             />
-            <span class="team-people-element__name">Игнат</span>
-            <span class="team-people-element__who">Архитектор</span>
+{{--            <span class="team-people-element__name">Игнат</span>--}}
+{{--            <span class="team-people-element__who">Архитектор</span>--}}
           </div>
           <div class="team-people-element">
             <img
               class="team-people-element__image"
-              src="./assets/images/team4.jpg"
+              src="./assets/images/team4.png"
               alt="team"
             />
-            <span class="team-people-element__name">Виктор</span>
-            <span class="team-people-element__who">Дизайнер</span>
+{{--            <span class="team-people-element__name">Виктор</span>--}}
+{{--            <span class="team-people-element__who">Дизайнер</span>--}}
           </div>
         </div>
       </div>
