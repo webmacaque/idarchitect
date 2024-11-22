@@ -596,7 +596,7 @@ img {
 
 .team-people {
   display: grid;
-  grid-template-columns: repeat(4, 140px);
+  grid-template-columns: repeat(5, 140px);
   gap: 50px;
   justify-content: center;
   @media screen and (max-width: 767px) {
