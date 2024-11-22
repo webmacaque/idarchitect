@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let center = new google.maps.LatLng(46.351751, 48.043511);
 
   let ico = {
-    url: "http://idarchitects.ru/pin.svg",
+    url: "/assets/icons/pin.svg",
     size: new google.maps.Size(95, 111),
     anchor: new google.maps.Point(24, 67),
   };
