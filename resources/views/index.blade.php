@@ -10,7 +10,40 @@
 
 @section('content')
     @if($topProjects->isNotEmpty())
-    <section class="swiper-container top-slider">
+        <section class="swiper-container top-slider mobile">
+            <div class="swiper-wrapper">
+                @foreach($topProjects as $project)
+                <div class="swiper-slide">
+                    <div>
+                        <img class="slide-image" src="{{$project->mainPhoto->path}}" alt="">
+                        <div class="slide-content">
+                            <span class="slide-content__title">{{$project->name}}</span>
+                            <div class="slide-content__description">{{$project->description}}</div>
+                            <div class="slide-content-bottom">
+                                <a href="{{route('project', [$project->projectType->slug, $project->slug])}}" class="button--small button--gray">
+                                    Смотреть
+                                    <img
+                                        class="button__icon"
+                                        src="./assets/icons/button-arrow.svg"
+                                        alt=""
+                                    />
+                                </a>
+                                <div class="custom-pagination">
+                                    @if($topProjects->count() > 1)
+                                        <span class="custom-bullet" data-index="0"></span>
+                                    @endif
+                                    @for($i=1;$i<$topProjects->count();$i++)
+                                        <span class="custom-bullet" data-index="{{$i}}"></span>
+                                    @endfor
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </section>
+        <section class="swiper-container top-slider desktop">
       <div class="swiper-wrapper">
         @foreach($topProjects as $project)
         <div
@@ -65,6 +98,9 @@
           <div>
             У нас работают опытные специалисты, для которых нет нерешаемых
             задач.
+              <br>
+              <br>
+              Наша миссия – СДЕЛАТЬ ГОРОД КРАСИВЫМ!
           </div>
         </div>
       </div>
@@ -73,55 +109,11 @@
       <div class="content">
         <h2 class="title white services__title">Сервисы</h2>
         <div class="services-list">
-          <div class="services-list-element">
-            <div class="services-list-element__image">
-              <img src="./assets/icons/service1.svg" alt="service1" />
-            </div>
-            <span class="services-list-element__text">
-              Разработка архитектурных проектов
-            </span>
-          </div>
-          <div class="services-list-element">
-            <div class="services-list-element__image">
-              <img src="./assets/icons/service2.svg" alt="service1" />
-            </div>
-            <span class="services-list-element__text">
-              Дизайн жилых и<br />общественных интерьеров
-            </span>
-          </div>
-          <div class="services-list-element">
-            <div class="services-list-element__image">
-              <img src="./assets/icons/service3.svg" alt="service3" />
-            </div>
-            <span class="services-list-element__text">
-              Разработка проектной документации
-            </span>
-          </div>
-          <div class="services-list-element">
-            <div class="services-list-element__image">
-              <img src="./assets/icons/service4.svg" alt="service4" />
-            </div>
-            <span class="services-list-element__text">
-              Разработка проектов зоны охраны ОКН
-            </span>
-          </div>
-          <div class="services-list-element">
-            <div class="services-list-element__image">
-              <img src="./assets/icons/service5.svg" alt="service5" />
-            </div>
-            <span class="services-list-element__text">
-              Разработка ПД по реставрации и приспособлению ОКН
-            </span>
-          </div>
-          <div class="services-list-element">
-            <div class="services-list-element__image">
-              <img src="./assets/icons/service6.svg" alt="service6" />
-            </div>
-            <span class="services-list-element__text">
-              Юридическое<br />сопровождение
-            </span>
-          </div>
+            @include('service-list')
         </div>
+          <div class="services-list mobile">
+              @include('service-list')
+          </div>
       </div>
     </section>
     <section id="gallery">
@@ -157,27 +149,15 @@
                     <button
                         class="gallery-slider1-prev gallery-slider-nav gallery-slider-prev button--black button--big"
                     >
-                        <svg
-                            width="6"
-                            height="14"
-                            viewBox="0 0 6 14"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M5 1L1 7L5 13" stroke="white" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">
+                            <path d="M8 15L2 8L8 1" stroke="white" stroke-width="2"/>
                         </svg>
                     </button>
                     <button
                         class="gallery-slider1-next gallery-slider-nav gallery-slider-next button--black button--big"
                     >
-                        <svg
-                            width="6"
-                            height="14"
-                            viewBox="0 0 6 14"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M5 1L1 7L5 13" stroke="white" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">
+                            <path d="M8 15L2 8L8 1" stroke="white" stroke-width="2"/>
                         </svg>
                     </button>
                 </div>

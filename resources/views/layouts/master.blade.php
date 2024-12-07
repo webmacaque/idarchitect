@@ -57,21 +57,21 @@
 <footer id="contacts">
     <div class="content footer-content">
         <a class="footer-logo" href="/">
-            <img src="/assets/svg/logo.svg" alt="id architect" />
+            <img src="/assets/svg/logo-footer.svg" alt="id architect" />
         </a>
         <div class="footer-text">
             <div class="footer-text__address">
-                414000, Россия, Астрахань, ул. Свердлова, 45
+                <a href="https://go.2gis.com/r205h" target="_blank">414000, Россия, Астрахань, ул. Свердлова, 45</a>
             </div>
             <div class="footer-text__email">
-                E-mail:<br />
+{{--                E-mail:<br />--}}
                 <a href="mailto:idarchitects@mail.ru">idarchitects@mail.ru</a>
             </div>
             <div class="footer-text__site">
                 Официальный сайт<br />компании ID Architects.
             </div>
             <div class="footer-text__phone">
-                Тел./факс:<br />
+{{--                Тел./факс:<br />--}}
                 <a href="tel:+78512523333">+7 (8512) 52-33-33</a><br />
                 <a href="tel:+78512524444">+7 (8512) 52-44-44</a>
             </div>

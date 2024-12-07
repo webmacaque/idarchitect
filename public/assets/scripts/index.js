@@ -76,10 +76,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Your custom options
   });
 
-  const swiper = new Swiper(".swiper-container", {
+  const swiper = new Swiper(".swiper-container.desktop", {
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
+        el: ".swiper-container.desktop .swiper-pagination",
       clickable: true,
     },
     on: {
@@ -95,11 +95,26 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
+    const swiperM = new Swiper(".swiper-container.mobile", {
+        loop: true,
+        pagination: {
+            el: ".swiper-container.mobile .swiper-pagination",
+            clickable: true,
+        },
+        on: {
+            init: function () {
+                updateBullets(this);
+            },
+            slideChange: function () {
+                updateBullets(this);
+            },
+        },
+    });
 
   const swiperGallery = new Swiper(".swiper-container-gallery1", {
     loop: false,
     slidesPerView: 1,
-    spaceBetween: 10,
+    spaceBetween: 25,
     navigation: {
       nextEl: ".gallery-slider1-next",
       prevEl: ".gallery-slider1-prev",
@@ -121,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const swiperGallery2 = new Swiper(".swiper-container-gallery2", {
     loop: false,
     slidesPerView: 1,
-    spaceBetween: 10,
+    spaceBetween: 25,
     navigation: {
       nextEl: ".gallery-slider2-next",
       prevEl: ".gallery-slider2-prev",
