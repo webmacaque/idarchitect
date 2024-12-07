@@ -108,7 +108,7 @@
     <section id="services" class="services">
       <div class="content">
         <h2 class="title white services__title">Сервисы</h2>
-        <div class="services-list">
+        <div class="services-list desktop">
             @include('service-list')
         </div>
         <div class="services-list mobile">

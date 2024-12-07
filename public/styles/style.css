@@ -415,12 +415,13 @@ img {
       display: none;
   }
 }
-    @media screen and (max-width: 767px) {
-        .services-list.mobile {
-            display: grid;
-        }
-    }
+.services-list.mobile {
+    display: none;
 
+    @media screen and (max-width: 767px) {
+        display: grid;
+    }
+}
 
 .services-list-element {
   text-align: center;
