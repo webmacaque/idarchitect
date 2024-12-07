@@ -150,7 +150,7 @@
         <div class="gallery-content content">
             <div class="gallery-slider">
                 <span class="gallery-slider-top__title"> {{$type->name}} </span>
-                <div class="swiper-container-gallery1">
+                <div class="swiper-container-gallery{{$loop->index+1}}">
                     <div class="swiper-wrapper">
                         @foreach($type->mainProjects as $project)
                         <div class="swiper-slide">
@@ -171,14 +171,14 @@
 
                     </div>
                     <button
-                        class="gallery-slider1-prev gallery-slider-nav gallery-slider-prev button--black button--big"
+                        class="gallery-slider{{$loop->index+1}}-prev gallery-slider-nav gallery-slider-prev button--black button--big"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">
                             <path d="M8 15L2 8L8 1" stroke="white" stroke-width="2"/>
                         </svg>
                     </button>
                     <button
-                        class="gallery-slider1-next gallery-slider-nav gallery-slider-next button--black button--big"
+                        class="gallery-slider{{$loop->index+1}}-next gallery-slider-nav gallery-slider-next button--black button--big"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">
                             <path d="M8 15L2 8L8 1" stroke="white" stroke-width="2"/>
@@ -190,14 +190,190 @@
               {{$type->name}}
             </span>
                     <div
-                        class="gallery-slider1-pagination gallery-slider-pagination"
+                        class="gallery-slider{{$loop->index+1}}-pagination gallery-slider-pagination"
                     ></div>
                     <a href="{{route('project-type', $type->slug)}}" class="button--big button--black">Посмотреть все</a>
                 </div>
             </div>
         </div>
+
         @endforeach
     </section>
+{{--    <section id="gallery">--}}
+{{--        <div class="gallery">--}}
+{{--            <div class="content gallery-title">--}}
+{{--                <h2 class="title">Галерея проектов</h2>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="gallery-content content">--}}
+{{--            <div class="gallery-slider">--}}
+{{--                <span class="gallery-slider-top__title"> Архитектурные проекты </span>--}}
+{{--                <div class="swiper-container-gallery1">--}}
+{{--                    <div class="swiper-wrapper">--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <a href="#" class="gallery-slider-container">--}}
+{{--                                <img--}}
+{{--                                    class="gallery-slider-image"--}}
+{{--                                    src="./assets/images/top-slide-2.jpg"--}}
+{{--                                    alt="slide"--}}
+{{--                                />--}}
+{{--                                <span class="gallery-slider__name">"Волжская Ривьера"</span>--}}
+{{--                                <span class="gallery-slider__year"--}}
+{{--                                >Жилой комплекс / 2014</span--}}
+{{--                                >--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <a href="#" class="gallery-slider-container">--}}
+{{--                                <img--}}
+{{--                                    class="gallery-slider-image"--}}
+{{--                                    src="./assets/images/top-slide-2.jpg"--}}
+{{--                                    alt="slide"--}}
+{{--                                />--}}
+{{--                                <span class="gallery-slider__name">"Волжская Ривьера"</span>--}}
+{{--                                <span class="gallery-slider__year"--}}
+{{--                                >Жилой комплекс / 2014</span--}}
+{{--                                >--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <a href="#" class="gallery-slider-container">--}}
+{{--                                <img--}}
+{{--                                    class="gallery-slider-image"--}}
+{{--                                    src="./assets/images/top-slide-2.jpg"--}}
+{{--                                    alt="slide"--}}
+{{--                                />--}}
+{{--                                <span class="gallery-slider__name">"Волжская Ривьера"</span>--}}
+{{--                                <span class="gallery-slider__year"--}}
+{{--                                >Жилой комплекс / 2014</span--}}
+{{--                                >--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <a href="#" class="gallery-slider-container">--}}
+{{--                                <img--}}
+{{--                                    class="gallery-slider-image"--}}
+{{--                                    src="./assets/images/top-slide-2.jpg"--}}
+{{--                                    alt="slide"--}}
+{{--                                />--}}
+{{--                                <span class="gallery-slider__name">"Волжская Ривьера"</span>--}}
+{{--                                <span class="gallery-slider__year"--}}
+{{--                                >Жилой комплекс / 2014</span--}}
+{{--                                >--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <button--}}
+{{--                        class="gallery-slider1-prev gallery-slider-nav gallery-slider-prev button--black button--big"--}}
+{{--                    >--}}
+{{--                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">--}}
+{{--                            <path d="M8 15L2 8L8 1" stroke="white" stroke-width="2"/>--}}
+{{--                        </svg>--}}
+{{--                    </button>--}}
+{{--                    <button--}}
+{{--                        class="gallery-slider1-next gallery-slider-nav gallery-slider-next button--black button--big"--}}
+{{--                    >--}}
+{{--                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">--}}
+{{--                            <path d="M8 15L2 8L8 1" stroke="white" stroke-width="2"/>--}}
+{{--                        </svg>--}}
+{{--                    </button>--}}
+{{--                </div>--}}
+{{--                <div class="gallery-slider-bottom">--}}
+{{--            <span class="gallery-slider-bottom__title">--}}
+{{--              Архитектурные проекты--}}
+{{--            </span>--}}
+{{--                    <div--}}
+{{--                        class="gallery-slider1-pagination gallery-slider-pagination"--}}
+{{--                    ></div>--}}
+{{--                    <a href="#" class="button--big button--black">Посмотреть все</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="gallery-content content">--}}
+{{--            <div class="gallery-slider">--}}
+{{--                <span class="gallery-slider-top__title"> Интерьерные проекты </span>--}}
+{{--                <div class="swiper-container-gallery2">--}}
+{{--                    <div class="swiper-wrapper">--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <a href="#" class="gallery-slider-container">--}}
+{{--                                <img--}}
+{{--                                    class="gallery-slider-image"--}}
+{{--                                    src="./assets/images/top-slide-2.jpg"--}}
+{{--                                    alt="slide"--}}
+{{--                                />--}}
+{{--                                <span class="gallery-slider__name">"Волжская Ривьера"</span>--}}
+{{--                                <span class="gallery-slider__year"--}}
+{{--                                >Жилой комплекс / 2014</span--}}
+{{--                                >--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <a href="#" class="gallery-slider-container">--}}
+{{--                                <img--}}
+{{--                                    class="gallery-slider-image"--}}
+{{--                                    src="./assets/images/top-slide-2.jpg"--}}
+{{--                                    alt="slide"--}}
+{{--                                />--}}
+{{--                                <span class="gallery-slider__name">"Волжская Ривьера"</span>--}}
+{{--                                <span class="gallery-slider__year"--}}
+{{--                                >Жилой комплекс / 2014</span--}}
+{{--                                >--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <a href="#" class="gallery-slider-container">--}}
+{{--                                <img--}}
+{{--                                    class="gallery-slider-image"--}}
+{{--                                    src="./assets/images/top-slide-2.jpg"--}}
+{{--                                    alt="slide"--}}
+{{--                                />--}}
+{{--                                <span class="gallery-slider__name">"Волжская Ривьера"</span>--}}
+{{--                                <span class="gallery-slider__year"--}}
+{{--                                >Жилой комплекс / 2014</span--}}
+{{--                                >--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <div class="swiper-slide">--}}
+{{--                            <a href="#" class="gallery-slider-container">--}}
+{{--                                <img--}}
+{{--                                    class="gallery-slider-image"--}}
+{{--                                    src="./assets/images/top-slide-2.jpg"--}}
+{{--                                    alt="slide"--}}
+{{--                                />--}}
+{{--                                <span class="gallery-slider__name">"Волжская Ривьера"</span>--}}
+{{--                                <span class="gallery-slider__year"--}}
+{{--                                >Жилой комплекс / 2014</span--}}
+{{--                                >--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <button--}}
+{{--                        class="gallery-slider2-prev gallery-slider-nav gallery-slider-prev button--black button--big"--}}
+{{--                    >--}}
+{{--                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">--}}
+{{--                            <path d="M8 15L2 8L8 1" stroke="white" stroke-width="2"/>--}}
+{{--                        </svg>--}}
+{{--                    </button>--}}
+{{--                    <button--}}
+{{--                        class="gallery-slider2-next gallery-slider-nav gallery-slider-next button--black button--big"--}}
+{{--                    >--}}
+{{--                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">--}}
+{{--                            <path d="M8 15L2 8L8 1" stroke="white" stroke-width="2"/>--}}
+{{--                        </svg>--}}
+{{--                    </button>--}}
+{{--                </div>--}}
+{{--                <div class="gallery-slider-bottom">--}}
+{{--            <span class="gallery-slider-bottom__title">--}}
+{{--              Интерьерные проекты--}}
+{{--            </span>--}}
+{{--                    <div--}}
+{{--                        class="gallery-slider2-pagination gallery-slider-pagination"--}}
+{{--                    ></div>--}}
+{{--                    <a href="#" class="button--big button--black">Посмотреть все</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <section id="team" class="team">
       <div class="content">
           <h2 class="title white team__title">Команда</h2>
@@ -228,7 +404,7 @@
                       alt="team"
                   />
                   <span class="team-people-element__name">Павел</span>
-                  <span class="team-people-element__who">Инженер</span>
+                  <span class="team-people-element__who">ГИП</span>
               </div>
               <div class="team-people-element">
                   <img
@@ -237,7 +413,7 @@
                       alt="team"
                   />
                   <span class="team-people-element__name">Павел</span>
-                  <span class="team-people-element__who">ГИП</span>
+                  <span class="team-people-element__who">Юрист</span>
               </div>
               <div class="team-people-element">
                   <img
