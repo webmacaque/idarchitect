@@ -111,8 +111,32 @@
         <div class="services-list">
             @include('service-list')
         </div>
-          <div class="services-list mobile">
-              @include('service-list')
+        <div class="services-list mobile">
+              <div class="services-list-element">
+                  <div class="services-list-element__image">
+                      <img src="./assets/icons/service1.svg" alt="service1" />
+                  </div>
+                  <span class="services-list-element__text">
+              Разработка архитектурных проектов
+            </span>
+              </div>
+              <div class="services-list-element">
+                  <div class="services-list-element__image">
+                      <img src="./assets/icons/service4.svg" alt="service4" />
+                  </div>
+                  <span class="services-list-element__text">
+              Разработка проектов зоны охраны ОКН
+            </span>
+              </div>
+              <div class="services-list-element">
+                  <div class="services-list-element__image">
+                      <img src="./assets/icons/service2.svg" alt="service1" />
+                  </div>
+                  <span class="services-list-element__text">
+              Дизайн интерьеров
+            </span>
+              </div>
+
           </div>
       </div>
     </section>
@@ -176,7 +200,8 @@
     </section>
     <section id="team" class="team">
       <div class="content">
-        <h2 class="title white team__title">Команда</h2>
+          <h2 class="title white team__title">Команда</h2>
+          <h3 class="team__subtitle">Менеджмент и ключевые сотрудники</h3>
           <div class="team-people">
               <div class="team-people-element">
                   <img
@@ -212,7 +237,7 @@
                       alt="team"
                   />
                   <span class="team-people-element__name">Павел</span>
-                  <span class="team-people-element__who">Юрист</span>
+                  <span class="team-people-element__who">ГИП</span>
               </div>
               <div class="team-people-element">
                   <img

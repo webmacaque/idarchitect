@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
+
     const swiperM = new Swiper(".swiper-container.mobile", {
         loop: true,
         pagination: {
@@ -159,6 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
     bullet.addEventListener("click", function () {
       const index = this.getAttribute("data-index");
       swiper.slideToLoop(index); // Use slideToLoop to ensure proper slide index in looped mode
+      swiperM.slideToLoop(index); // Use slideToLoop to ensure proper slide index in looped mode
     });
   });
 
