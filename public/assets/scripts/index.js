@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let ico = {
     url: "/assets/icons/pin.svg",
     size: new google.maps.Size(95, 111),
-    anchor: new google.maps.Point(50, 125),
+    anchor: new google.maps.Point(50, 140),
   };
 
   menu();
