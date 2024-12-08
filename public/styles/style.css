@@ -388,8 +388,8 @@ img {
 }
 
 .services {
-  padding-top: 40px;
-  padding-bottom: 200px;
+  padding-top: 80px;
+  padding-bottom: 204px;
   background: url("../assets/images/services-bg.png");
   background-size: cover;
   @media screen and (max-width: 767px) {

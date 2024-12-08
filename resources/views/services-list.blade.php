@@ -1,3 +1,4 @@
+@if($type=='desktop')
 <div class="services-list-element">
     <div class="services-list-element__image">
         <img src="./assets/icons/service1.svg" alt="service1" />
@@ -46,3 +47,31 @@
               Юридическое<br />сопровождение
             </span>
 </div>
+@elseif($type=='mobile')
+    <div class="services-list-element">
+        <div class="services-list-element__image">
+            <img src="./assets/icons/service1.svg" alt="service1" />
+        </div>
+        <span class="services-list-element__text">
+              Разработка архитектурных проектов
+            </span>
+    </div>
+    <div class="services-list-element">
+        <div class="services-list-element__image">
+            <img src="./assets/icons/service5.svg" alt="service4" />
+        </div>
+        <span class="services-list-element__text">
+              Разработка ПД по реставрации и приспособлению ОКН
+            </span>
+    </div>
+    <div class="services-list-element">
+        <div class="services-list-element__image">
+            <img src="./assets/icons/service2.svg" alt="service1" />
+        </div>
+        <span class="services-list-element__text">
+              Дизайн интерьеров
+            </span>
+    </div>
+
+    </div>
+@endif

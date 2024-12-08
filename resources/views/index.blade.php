@@ -109,35 +109,10 @@
       <div class="content">
         <h2 class="title white services__title">Сервисы</h2>
         <div class="services-list desktop">
-            @include('service-list')
+            @include('services-list', ['type'=>'desktop'])
         </div>
         <div class="services-list mobile">
-              <div class="services-list-element">
-                  <div class="services-list-element__image">
-                      <img src="./assets/icons/service1.svg" alt="service1" />
-                  </div>
-                  <span class="services-list-element__text">
-              Разработка архитектурных проектов
-            </span>
-              </div>
-              <div class="services-list-element">
-                  <div class="services-list-element__image">
-                      <img src="./assets/icons/service4.svg" alt="service4" />
-                  </div>
-                  <span class="services-list-element__text">
-              Разработка проектов зоны охраны ОКН
-            </span>
-              </div>
-              <div class="services-list-element">
-                  <div class="services-list-element__image">
-                      <img src="./assets/icons/service2.svg" alt="service1" />
-                  </div>
-                  <span class="services-list-element__text">
-              Дизайн интерьеров
-            </span>
-              </div>
-
-          </div>
+            @include('services-list', ['type'=>'mobile'])
       </div>
     </section>
     <section id="gallery">

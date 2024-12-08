@@ -61,11 +61,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let map;
   let center = new google.maps.LatLng(46.351751, 48.043511);
+  // let center = new google.maps.LatLng(46.351824120512745, 48.04344657492781);
 
   let ico = {
     url: "/assets/icons/pin.svg",
     size: new google.maps.Size(95, 111),
-    anchor: new google.maps.Point(24, 67),
+    anchor: new google.maps.Point(50, 125),
   };
 
   menu();
