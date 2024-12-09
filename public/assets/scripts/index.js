@@ -312,4 +312,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   initializeMap();
+    window.history.scrollRestoration = "manual";
+
+    window.addEventListener("load", () => {
+        const hash = window.location.hash;
+        if (hash) {
+            const targetSection = document.querySelector(hash);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 117,
+                    behavior: "smooth",
+                });
+            }
+        }
+    });
 });
