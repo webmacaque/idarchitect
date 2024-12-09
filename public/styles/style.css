@@ -627,7 +627,7 @@ img {
 .gallery-slider-bottom .button--big {
     text-align: center;
     justify-content: center;
-    z-index: 100;
+    z-index: 90;
 }
 
 .gallery-slider-bottom .swiper-pagination-bullet {
