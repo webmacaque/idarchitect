@@ -9,7 +9,7 @@
 </div>
 <div class="services-list-element">
     <div class="services-list-element__image">
-        <img src="./assets/icons/service2.svg" alt="service1" />
+        <img src="./assets/icons/service2.svg" alt="service2" />
     </div>
     <span class="services-list-element__text">
               Дизайн  интерьеров
@@ -58,18 +58,18 @@
     </div>
     <div class="services-list-element">
         <div class="services-list-element__image">
-            <img src="./assets/icons/service5.svg" alt="service4" />
+            <img src="./assets/icons/service2.svg" alt="service2" />
         </div>
         <span class="services-list-element__text">
-              Разработка ПД по реставрации и приспособлению ОКН
+              Дизайн  интерьеров
             </span>
     </div>
     <div class="services-list-element">
         <div class="services-list-element__image">
-            <img src="./assets/icons/service2.svg" alt="service1" />
+            <img src="./assets/icons/service3.svg" alt="service3" />
         </div>
         <span class="services-list-element__text">
-              Дизайн интерьеров
+              Разработка проектной документации
             </span>
     </div>
 
