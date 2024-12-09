@@ -179,96 +179,16 @@
           <h2 class="title white team__title">Команда</h2>
           <h3 class="team__subtitle">Менеджмент и ключевые сотрудники</h3>
           <div class="team-people">
-              <div class="team-people-element">
-                  <img
-                      class="team-people-element__image"
-                      src="./assets/images/team/team11.natalya.png"
-                      alt="team"
-                  />
-                  <span class="team-people-element__name">Наталья</span>
-                  <span class="team-people-element__who">Руководитель</span>
-              </div>
-              <div class="team-people-element">
-                  <img
-                      class="team-people-element__image"
-                      src="./assets/images/team/team12.anton.png"
-                      alt="team"
-                  />
-                  <span class="team-people-element__name">Антон</span>
-                  <span class="team-people-element__who">Коммерческий директор</span>
-              </div>
-              <div class="team-people-element">
-                  <img
-                      class="team-people-element__image"
-                      src="./assets/images/team/team13.pavel.png"
-                      alt="team"
-                  />
-                  <span class="team-people-element__name">Павел</span>
-                  <span class="team-people-element__who">ГИП</span>
-              </div>
-              <div class="team-people-element">
-                  <img
-                      class="team-people-element__image"
-                      src="./assets/images/team/team14.pavel.png"
-                      alt="team"
-                  />
-                  <span class="team-people-element__name">Павел</span>
-                  <span class="team-people-element__who">Юрист</span>
-              </div>
-              <div class="team-people-element">
-                  <img
-                      class="team-people-element__image"
-                      src="./assets/images/team/team15.anver.png"
-                      alt="team"
-                  />
-                  <span class="team-people-element__name">Анвер</span>
-                  <span class="team-people-element__who">Главный дизайнер</span>
-              </div>
-              <div class="team-people-element">
-                  <img
-                      class="team-people-element__image"
-                      src="./assets/images/team/team21.radmir.png"
-                      alt="team"
-                  />
-                  <span class="team-people-element__name">Радмир</span>
-                  <span class="team-people-element__who">Архитектор</span>
-              </div>
-              <div class="team-people-element">
-                  <img
-                      class="team-people-element__image"
-                      src="./assets/images/team/team22.sergey.png"
-                      alt="team"
-                  />
-                  <span class="team-people-element__name">Сергей</span>
-                  <span class="team-people-element__who">Архитектор</span>
-              </div>
-              <div class="team-people-element">
-                  <img
-                      class="team-people-element__image"
-                      src="./assets/images/team/team23.maria.png"
-                      alt="team"
-                  />
-                  <span class="team-people-element__name">Мария</span>
-                  <span class="team-people-element__who">Архитектор</span>
-              </div>
-              <div class="team-people-element">
-                  <img
-                      class="team-people-element__image"
-                      src="./assets/images/team/team24.yulia.png"
-                      alt="team"
-                  />
-                  <span class="team-people-element__name">Юлия</span>
-                  <span class="team-people-element__who">Архитектор</span>
-              </div>
-              <div class="team-people-element">
-                  <img
-                      class="team-people-element__image"
-                      src="./assets/images/team/team25.roman.png"
-                      alt="team"
-                  />
-                  <span class="team-people-element__name">Роман</span>
-                  <span class="team-people-element__who">Архитектор</span>
-              </div>
+              @include('team-element', ['filename'=>'team11.natalya.png', 'name'=>'Наталья', 'job'=>'Руководитель'])
+              @include('team-element', ['filename'=>'team12.anton.png', 'name'=>'Антон', 'job'=>'Коммерческий директор'])
+              @include('team-element', ['filename'=>'team13.pavel.png', 'name'=>'Павел', 'job'=>'ГИП'])
+              @include('team-element', ['filename'=>'team14.pavel.png', 'name'=>'Павел', 'job'=>'Юрист'])
+              @include('team-element', ['filename'=>'team15.anver.png', 'name'=>'Анвер', 'job'=>'Главный дизайнер'])
+              @include('team-element', ['filename'=>'team21.radmir.png', 'name'=>'Радмир', 'job'=>'Архитектор'])
+              @include('team-element', ['filename'=>'team22.sergey.png', 'name'=>'Сергей', 'job'=>'Архитектор'])
+              @include('team-element', ['filename'=>'team23.maria.png', 'name'=>'Мария', 'job'=>'Архитектор'])
+              @include('team-element', ['filename'=>'team24.yulia.png', 'name'=>'Юлия', 'job'=>'Архитектор'])
+              @include('team-element', ['filename'=>'team25.roman.png', 'name'=>'Роман', 'job'=>'Архитектор'])
           </div>
       </div>
     </section>
