@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('menu')
-    <a href="#about" class="header-menu__link">О компании</a>
-    <a href="#services" class="header-menu__link">Сервисы</a>
-    <a href="#gallery" class="header-menu__link">Галерея проектов</a>
-    <a href="#team" class="header-menu__link">Команда</a>
-    <a href="#contacts" class="header-menu__link">Контакты</a>
+    <a href="#about" class="header-menu__link for-landing">О компании</a>
+    <a href="#services" class="header-menu__link for-landing">Сервисы</a>
+    <a href="#gallery" class="header-menu__link for-landing">Галерея проектов</a>
+    <a href="#team" class="header-menu__link for-landing">Команда</a>
+    <a href="#contacts" class="header-menu__link for-landing">Контакты</a>
 @endsection
 
 @section('content')
@@ -79,7 +79,7 @@
       </div>
     </section>
     @endif
-    <section id="about" class="about">
+    <section id="about-link" class="about">
       <div class="content">
         <h2 class="title">О компании</h2>
         <div class="about-text">
@@ -105,7 +105,7 @@
         </div>
       </div>
     </section>
-    <section id="services" class="services">
+    <section id="services-link" class="services">
       <div class="content">
         <h2 class="title white services__title">Сервисы</h2>
         <div class="services-list desktop">
@@ -116,7 +116,7 @@
         </div>
       </div>
     </section>
-    <section id="gallery">
+    <section id="gallery-link">
       <div class="gallery">
         <div class="content gallery-title">
           <h2 class="title">Галерея проектов</h2>
@@ -175,7 +175,7 @@
 
         @endforeach
     </section>
-    <section id="team" class="team">
+    <section id="team-link" class="team">
       <div class="content">
           <h2 class="title white team__title">Команда</h2>
           <h3 class="team__subtitle">Менеджмент и ключевые сотрудники</h3>
