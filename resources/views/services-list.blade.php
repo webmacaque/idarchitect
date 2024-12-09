@@ -1,77 +1,12 @@
 @if($type=='desktop')
-<div class="services-list-element">
-    <div class="services-list-element__image">
-        <img src="./assets/icons/service1.svg" alt="service1" />
-    </div>
-    <span class="services-list-element__text">
-              Разработка архитектурных проектов
-            </span>
-</div>
-<div class="services-list-element">
-    <div class="services-list-element__image">
-        <img src="./assets/icons/service2.svg" alt="service2" />
-    </div>
-    <span class="services-list-element__text">
-              Дизайн  интерьеров
-            </span>
-</div>
-<div class="services-list-element">
-    <div class="services-list-element__image">
-        <img src="./assets/icons/service3.svg" alt="service3" />
-    </div>
-    <span class="services-list-element__text">
-              Разработка проектной документации
-            </span>
-</div>
-<div class="services-list-element">
-    <div class="services-list-element__image">
-        <img src="./assets/icons/service4.svg" alt="service4" />
-    </div>
-    <span class="services-list-element__text">
-              Разработка проектов зоны охраны ОКН
-            </span>
-</div>
-<div class="services-list-element">
-    <div class="services-list-element__image">
-        <img src="./assets/icons/service5.svg" alt="service5" />
-    </div>
-    <span class="services-list-element__text">
-              Разработка ПД по реставрации и приспособлению ОКН
-            </span>
-</div>
-<div class="services-list-element">
-    <div class="services-list-element__image">
-        <img src="./assets/icons/service6.svg" alt="service6" />
-    </div>
-    <span class="services-list-element__text">
-              Юридическое<br />сопровождение
-            </span>
-</div>
+    @include('service', ['code'=>'service1', 'title'=>'Разработка архитектурных проектов'])
+    @include('service', ['code'=>'service2', 'title'=>'Дизайн  интерьеров'])
+    @include('service', ['code'=>'service3', 'title'=>'Разработка проектной документации'])
+    @include('service', ['code'=>'service4', 'title'=>'Разработка проектов зоны охраны ОКН'])
+    @include('service', ['code'=>'service5', 'title'=>'Разработка ПД по реставрации и приспособлению ОКН'])
+    @include('service', ['code'=>'service6', 'title'=>'Юридическое<br />сопровождение'])
 @elseif($type=='mobile')
-    <div class="services-list-element">
-        <div class="services-list-element__image">
-            <img src="./assets/icons/service1.svg" alt="service1" />
-        </div>
-        <span class="services-list-element__text">
-              Разработка архитектурных проектов
-            </span>
-    </div>
-    <div class="services-list-element">
-        <div class="services-list-element__image">
-            <img src="./assets/icons/service2.svg" alt="service2" />
-        </div>
-        <span class="services-list-element__text">
-              Дизайн  интерьеров
-            </span>
-    </div>
-    <div class="services-list-element">
-        <div class="services-list-element__image">
-            <img src="./assets/icons/service3.svg" alt="service3" />
-        </div>
-        <span class="services-list-element__text">
-              Разработка проектной документации
-            </span>
-    </div>
-
-    </div>
+    @include('service', ['code'=>'service1', 'title'=>'Разработка архитектурных проектов'])
+    @include('service', ['code'=>'service2', 'title'=>'Дизайн  интерьеров'])
+    @include('service', ['code'=>'service3', 'title'=>'Разработка проектной документации'])
 @endif
