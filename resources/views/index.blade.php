@@ -113,6 +113,7 @@
         </div>
         <div class="services-list mobile">
             @include('services-list', ['type'=>'mobile'])
+        </div>
       </div>
     </section>
     <section id="gallery">
