@@ -625,8 +625,9 @@ img {
 }
 
 .gallery-slider-bottom .button--big {
-  text-align: center;
-  justify-content: center;
+    text-align: center;
+    justify-content: center;
+    z-index: 100;
 }
 
 .gallery-slider-bottom .swiper-pagination-bullet {
