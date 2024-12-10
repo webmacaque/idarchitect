@@ -79,7 +79,7 @@
       </div>
     </section>
     @endif
-    <section id="about-link" class="about">
+    <section id="about_link" class="about">
       <div class="content">
         <h2 class="title">О компании</h2>
         <div class="about-text">
@@ -105,7 +105,7 @@
         </div>
       </div>
     </section>
-    <section id="services-link" class="services">
+    <section id="services_link" class="services">
       <div class="content">
         <h2 class="title white services__title">Сервисы</h2>
         <div class="services-list desktop">
@@ -116,7 +116,7 @@
         </div>
       </div>
     </section>
-    <section id="gallery-link">
+    <section id="gallery_link">
       <div class="gallery">
         <div class="content gallery-title">
           <h2 class="title">Галерея проектов</h2>
@@ -175,7 +175,7 @@
 
         @endforeach
     </section>
-    <section id="team-link" class="team">
+    <section id="team_link" class="team">
       <div class="content">
           <h2 class="title white team__title">Команда</h2>
           <h3 class="team__subtitle">Менеджмент и ключевые сотрудники</h3>

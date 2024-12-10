@@ -54,7 +54,7 @@
     </div>
 </header>
     @yield('content')
-<footer id="contacts-link">
+<footer id="contacts_link">
     <div class="content footer-content">
         <a class="footer-logo" href="/">
             <img src="/assets/svg/logo-footer.svg" alt="id architect" />
