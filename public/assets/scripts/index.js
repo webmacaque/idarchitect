@@ -46,11 +46,11 @@ function menu() {
 }
 
 function calcOffset(link) {
-    if (link != null) {
+    if (link != null && window.screen.width > 1024) {
         link = link.replace('_link','');
         return link==='team'?0:117
     }
-    return 0;
+    return 117;
 }
 
 function toggleMobileMenu() {

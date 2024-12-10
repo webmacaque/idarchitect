@@ -246,7 +246,7 @@ img {
 
 .header-menu__link.active::before {
   @media screen and (max-width: 1024px) {
-    content: "asdadasd";
+    /*content: "asdadasd";*/
     position: relative;
     /* display: block;
     width: 5px;
