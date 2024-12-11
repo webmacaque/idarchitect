@@ -24,7 +24,7 @@
                         <a
                             href="{{$photo->path}}"
                             data-fancybox="gallery"
-{{--                            data-caption="{{$type->name}} #{{$i+1}}"--}}
+                            data-caption="{{$type->name}} #{{$i+1}}"
                         >
                             <img src="{{$photo->path}}" />
                         </a>
