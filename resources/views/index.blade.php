@@ -18,7 +18,7 @@
                         <img class="slide-image" src="{{$project->mainPhoto->path}}" alt="">
                         <div class="slide-content">
                             <span class="slide-content__title">{{$project->name}}</span>
-                            <div class="slide-content__description">{{$project->description}}</div>
+                            <div class="slide-content__description">{{ \Illuminate\Support\Str::words($project->description, 25) }}</div>
                             <div class="slide-content-bottom">
                                 <a href="{{route('project', [$project->projectType->slug, $project->slug])}}" class="button--small button--gray">
                                     Смотреть
@@ -53,7 +53,7 @@
               <div class="content">
                   <div class="slide-content">
                       <span class="slide-content__title">{{$project->name}}</span>
-                      <div class="slide-content__description">{{$project->description}}</div>
+                      <div class="slide-content__description">{{ \Illuminate\Support\Str::words($project->description, 25) }}</div>
                       <div class="slide-content-bottom">
                           <a href="{{route('project', [$project->projectType->slug, $project->slug])}}" class="button--small button--gray">
                               Смотреть

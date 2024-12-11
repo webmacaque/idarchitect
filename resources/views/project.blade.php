@@ -22,7 +22,7 @@
                 </div>
             </div>
             @unless(empty($project->description))
-            <div class="project-description">{{$project->description}}</div>
+            <div class="project-description">{!! nl2br($project->description) !!}</div>
             @endunless
             @foreach($photoTypes as $type)
                 @if($photos[$type->slug]->isNotEmpty())

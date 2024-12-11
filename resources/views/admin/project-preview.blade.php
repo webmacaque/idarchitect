@@ -12,7 +12,7 @@
         </div>
     </div>
     @unless(empty($project->description))
-    <div class="project-description">{{$project->description}}</div>
+    <div class="project-description">{!! nl2br($project->description) !!}</div>
     @endunless
 
     @foreach($photoTypes as $type)
@@ -74,7 +74,7 @@
             <div class="content project-top-content">
                 <div class="slide-content">
                     <span class="slide-content__title">{{$project->name}}</span>
-                    <div class="slide-content__description">{{$project->description}}</div>
+                    <div class="slide-content__description">{{ \Illuminate\Support\Str::words($project->description, 25) }}</div>
                 </div>
             </div>
         </div>
