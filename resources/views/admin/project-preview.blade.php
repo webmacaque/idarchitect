@@ -7,7 +7,7 @@
             Назад
         </a>
         <div class="page-top-info">
-            <span class="page-top-info__name">"{{$project->name}}"</span>
+            <span class="page-top-info__name">{{$project->name}}</span>
             <span class="page-top-info__year">{{$project->short_description}} / {{$project->year}}</span>
         </div>
     </div>
