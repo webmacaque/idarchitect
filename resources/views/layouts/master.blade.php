@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 @section('headerStyles')
     <link rel="stylesheet" href="/styles/normalize.css" />
     <link rel="stylesheet" href="/styles/fonts.css" />
@@ -56,7 +61,7 @@
     </div>
 </header>
     @yield('content')
-<footer id="contacts_link">
+<footer id="contacts">
     <div class="content footer-content">
         <a class="footer-logo" href="/">
             <img src="/assets/svg/logo-footer.svg" alt="id architect" />
@@ -110,4 +115,3 @@
 @show
 </body>
 </html>
-
