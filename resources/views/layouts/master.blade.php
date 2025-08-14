@@ -12,7 +12,9 @@
 </head>
 <body>
 <div class="header-mobile">
-    <img class="header-mobile__logo" src="/assets/svg/logo.svg" alt="logo" />
+    <a href="{{route('index')}}">
+        <img class="header-mobile__logo" src="/assets/svg/logo.svg" alt="logo" />
+    </a>
     <img
         class="header-mobile__logo--white"
         src="/assets/svg/logo-white.svg"

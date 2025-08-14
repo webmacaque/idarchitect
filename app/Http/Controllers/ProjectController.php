@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Models\ProjectPhotoType;
 use App\Models\ProjectType;
+use App\Models\Employee;
 use Illuminate\Support\Facades\URL;
 
 class ProjectController extends Controller
@@ -14,10 +15,12 @@ class ProjectController extends Controller
     {
         $projectTypes = ProjectType::orderBy('sort', 'asc')->get();
         $topProjects = Project::mainTop()->get();
+        $employees = Employee::orderBy('sorting_order', 'asc')->get();
 
         return view('index')
             ->with('topProjects', $topProjects)
-            ->with('projectTypes', $projectTypes);
+            ->with('projectTypes', $projectTypes)
+            ->with('employees', $employees);
     }
 
     public function projectType($slug)
@@ -38,7 +41,7 @@ class ProjectController extends Controller
 
     public function project($typeSlug, $slug)
     {
-        $backUrl = (URL::previous() === route('project-type', $typeSlug))? URL::previous() : route('index');
+        $backUrl = (URL::previous() === route('project-type', $typeSlug))? URL::previous() : route('index') . '#' . $typeSlug;
         $projectType = ProjectType::where('slug', $typeSlug)->firstOrFail();
         $project = $projectType->projects()->where('slug', $slug)->firstOrFail();
         $photoTypes = ProjectPhotoType::orderBy('sort')->get();

@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/admin/styles/normalize.css" />
-    <link rel="stylesheet" href="/admin/styles/fonts.css" />
+    <link rel="stylesheet" href="{{ asset('admin/styles/normalize.css') }}" />
+    <link rel="stylesheet" href="{{ asset('admin/styles/fonts.css') }}" />
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
     />
     @yield('styles')
-    <link rel="stylesheet" href="/admin/styles/style.css" />
+    <link rel="stylesheet" href="{{ asset('admin/styles/style.css') }}" />
     <title>ID Architects</title>
 </head>
 <body>
@@ -23,6 +23,7 @@
         <nav class="header-menu">
             <a href="{{route('admin-projects')}}" class="header-menu__link @yield('menu_projects','')">Список проектов</a>
             <a href="{{route('admin-users')}}" class="header-menu__link @yield('menu_users','')">Список администраторов</a>
+            <a href="{{route('admin-employees')}}" class="header-menu__link @yield('menu_employees','')">Список сотрудников</a>
             <a href="{{route('logout')}}" class="header-menu__link ">Выйти</a>
         </nav>
     </div>

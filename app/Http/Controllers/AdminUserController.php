@@ -20,19 +20,29 @@ class AdminUserController extends Controller
     {
         $user = User::find($id);
 
-        return view('admin.user-edit-form')
+        return view('admin.user-edit')
             ->with('user', $user);
     }
 
     public function createForm()
     {
-        return view('admin.user-create-form');
+        return view('admin.user-create');
     }
 
-    public function edit(Request $request, $id)
+    public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'login' => 'required',
+            'password' => 'nullable'
+        ]);
+
         $user = User::find($id);
-        $user->password = Hash::make($request->password);
+        $user->login = $request->login;
+
+        if ($request->filled('password')) {
+            $user->password = Hash::make($request->password);
+        }
+
         $user->save();
 
         return redirect()->route('admin-users');
@@ -55,7 +65,7 @@ class AdminUserController extends Controller
 
     public function delete(Request $request)
     {
-        $user = User::find($request->remove);
+        $user = User::find($request->user_id);
         $user?->delete();
 
         return redirect()->route('admin-users');

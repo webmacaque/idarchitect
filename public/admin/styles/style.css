@@ -1,847 +1,939 @@
 :root {
-  --museo: "MuseoSansCyrl", Arial, sans-serif;
-  --museo250: "MuseoSansCyrl_250", Arial, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-  outline: none !important;
-}
-
-body {
-  font-family: var(--museo250);
-  font-size: 15px;
-}
-
-img {
-  max-width: 100%;
-}
-
-body {
-  background: #f4f4f4;
-}
-
-footer {
-  height: 40px;
-}
-
-.button {
-  background: #000;
-  color: #fff;
-  height: 50px;
-  padding: 0 30px;
-  border: none;
-  font-size: 15px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  justify-content: center;
-}
-
-.button.square {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-}
-
-.button.white {
-  border: 1px solid #000;
-  background: #fff;
-  color: #000;
-}
-
-.button--p10 {
-  padding: 0 10px;
-}
-
-.button:hover {
-  opacity: 0.8;
-}
-
-.button:disabled {
-  background-color: rgba(32, 33, 33, 0.2);
-  cursor: default;
-}
-
-.button:disabled:hover {
-  opacity: 1;
-}
-
-.input {
-  width: 100%;
-  display: block;
-  background: transparent;
-  height: 50px;
-  padding: 0 20px;
-  font-size: 15px;
-  border: 1px solid rgba(83, 83, 83, 0.5);
-}
-
-.block {
-  background: #fff;
-  padding: 30px;
-}
-
-.block-title {
-  margin-bottom: 30px;
-  display: block;
-}
-
-.subtitle {
-  display: block;
-  margin-bottom: 15px;
-  font-size: 18px;
-  font-family: var(--museo);
-}
-
-.input--logo {
-  padding-left: 42px;
-}
-
-.file-upload-component {
-  margin-bottom: 15px;
-}
-
-.custom-file-upload {
-  display: flex;
-  align-items: center;
-  padding: 0 57px;
-  height: 50px;
-  cursor: pointer;
-  background-color: #fff;
-  border: 1px solid rgba(83, 83, 83, 0.5);
-  color: #000;
-  position: relative;
-}
-
-.custom-file-upload:before {
-  content: "";
-  background-image: url(/admin/assets/svg/photo.svg);
-  width: 23px;
-  height: 20px;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.custom-file-upload .file-list {
-  list-style: none;
-  padding: 0;
-}
-
-.file-list {
-  margin: 0;
-  padding: 0;
-}
-
-.file-list li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  border-bottom: 1px dashed rgba(83, 83, 83, 0.5);
-}
-
-.file-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.favorite {
-  color: goldenrod;
-}
-
-.file-name {
-  flex-grow: 1;
-}
-
-.file-input {
-  display: none;
-}
-
-.file-list-element__delete {
-  cursor: pointer;
-}
-
-.file-list-element__favorite {
-  cursor: pointer;
-}
-
-.choices {
-  margin-bottom: 0;
-}
-
-.choices[data-type*="select-one"]::after {
-  display: none;
-}
-
-.choices[data-type*="select-one"]::before {
-  content: "";
-  background: url("/admin/assets/svg/select-arrow.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 4px;
-}
-
-.choices[data-type*="select-one"].is-open::before {
-  transform: translateY(-50%) rotate(180deg);
-}
-
-.choices__list--dropdown .choices__item--selectable.is-highlighted,
-.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
-  background: #f4f4f4;
-  position: relative;
-}
-
-.choices__list--dropdown .choices__item--selectable.is-selected {
-  font-family: var(--museo);
-}
-
-.choices__list--dropdown .choices__item--selectable.is-selected:before {
-  content: "";
-  background: url("/admin/assets/svg/select-ok.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 6px;
-}
-
-.choices__list--dropdown .choices__item,
-.choices__list[aria-expanded] .choices__item {
-  font-size: 15px;
-  padding: 16px 20px;
-}
-
-.choices__list--single .choices__item {
-  font-size: 15px;
-}
-
-.choices__list--single {
-  padding: 0;
-}
-
-.choices__inner {
-  border: 1px solid rgba(83, 83, 83, 0.5);
-  height: 50px;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  background: transparent;
-}
-
-.choices.is-open {
-  background: #fff;
-}
-
-.checkbox-custom {
-  opacity: 0;
-  position: absolute;
-}
-
-.checkbox-custom,
-.checkbox-custom-label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 15px;
-  line-height: 16px;
-}
-
-.checkbox-custom-label {
-  position: relative;
-}
-
-.checkbox-custom + .checkbox-custom-label:before {
-  content: "";
-  background: #fff;
-  border: 1px solid rgba(83, 83, 83, 0.5);
-  display: inline-block;
-  vertical-align: middle;
-  width: 19px;
-  height: 19px;
-  margin-right: 14px;
-  text-align: center;
-}
-
-.checkbox-custom:checked + .checkbox-custom-label:before {
-  content: "";
-  background-color: rgba(32, 33, 33, 1);
-  background-image: url("/admin/assets/svg/checkbox.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.wrapper-login {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.login {
-  background: #fff;
-  width: 800px;
-  height: 800px;
-  padding: 120px 200px;
-}
-
-.login__logo {
-  display: block;
-  margin: 0 auto 120px auto;
-}
-
-.login-content {
-  width: 402px;
-}
-
-.login__input {
-  margin-bottom: 15px;
-}
-
-.login-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.content {
-  width: 1160px;
-  margin: auto;
-}
-
-.header {
-  background: #fff;
-  margin-bottom: 30px;
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-menu {
-  display: flex;
-}
-
-.header-menu__link {
-  display: flex;
-  align-items: center;
-  border-bottom: 3px solid transparent;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #000;
-  font-family: var(--museo250);
-  margin: 0 20px;
-  padding: 48px 0;
-}
-
-.header-menu__link.active {
-  border-color: #000;
-  font-family: var(--museo);
-}
-
-.page-title {
-  font-family: var(--museo);
-  text-transform: uppercase;
-  font-size: 25px;
-}
-
-.projects-filter {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 20px;
-  margin-bottom: 30px;
-  align-items: center;
-}
-
-.projects-filter-form {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 200px 1fr;
-  gap: 12px;
-}
-
-.projects-filter-form-search {
-  position: relative;
-}
-
-.projects-filter-search-icon {
-  position: absolute;
-  left: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.projects-list-element {
-  background: #fff;
-  padding: 40px 30px 30px 20px;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr 180px;
-  gap: 40px;
-  margin-bottom: 15px;
-}
-
-.projects-list-element.gray {
-  background: rgba(232, 232, 232, 1);
-}
-
-.projects-list-element__type {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.projects-list-element-name {
-  display: flex;
-  font-size: 20px;
-  font-family: var(--museo);
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.projects-list-element-name__favorite {
-  margin-right: 10px;
-}
-
-.projects-list-element__year {
-  margin-bottom: 20px;
-  display: block;
-}
-
-.projects-list-element-content {
-  line-height: 18px;
-}
-
-.projects-list-element-control__publish {
-  width: 180px;
-  margin-bottom: 10px;
-}
-
-.projects-list-element-control__bottom {
-  display: flex;
-  justify-content: space-between;
-}
-
-.pagination {
-  display: flex;
-  gap: 5px;
-}
-
-.pagination-element {
-  display: flex;
-  width: 55px;
-  height: 55px;
-  align-items: center;
-  justify-content: center;
-  font-weight: 500;
-  font-family: var(--museo);
-  font-size: 20px;
-  background: #fff;
-  color: #000;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.pagination-element.active {
-  background: #000;
-  color: #fff;
-}
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  z-index: 999;
-}
-
-/* Стили для модального окна */
-.modal {
-  position: fixed;
-  padding: 30px;
-  background-color: white;
-  width: 340px;
-  text-align: center;
-  z-index: 1000;
-  display: none;
-  border: none;
-}
-
-/* Включаем отображение модального окна при открытии поповера */
-.modal:popover-open {
-  display: block;
-}
-
-.modal__title {
-  margin-bottom: 20px;
-  display: block;
-  text-align: center;
-  font-family: var(--museo);
-}
-
-.modal__description {
-  line-height: 18px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.modal-buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  & > * {
-    width: 100%;
+    --museo: "MuseoSansCyrl", Arial, sans-serif;
+    --museo250: "MuseoSansCyrl_250", Arial, sans-serif;
   }
-}
 
-.modal-buttons input {
-    display: none;
-}
+  * {
+    box-sizing: border-box;
+    outline: none !important;
+  }
 
-.create-line {
-  display: grid;
-  grid-template-columns: 1fr 230px;
-  gap: 15px;
-  margin-bottom: 15px;
-}
+  body {
+    font-family: var(--museo250);
+    font-size: 15px;
+  }
 
-.textarea {
-  width: 100%;
-  border: 1px solid rgba(83, 83, 83, 0.5);
-  height: 200px;
-  margin-bottom: 15px;
-  resize: none;
-  padding: 15px 20px;
-}
+  img {
+    max-width: 100%;
+  }
 
-.create-bottom-field {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
+  body {
+    background: #f4f4f4;
+  }
 
-.create-bottom-field__required {
-  color: #bd1f1f;
-}
+  footer {
+    height: 40px;
+  }
 
-.create-bottom {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-}
+  .button {
+    background: #000;
+    color: #fff;
+    height: 50px;
+    padding: 0 30px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+  }
 
-.create-bottom-right {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 15px;
-}
-
-.files-uploaded {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px 3px;
-}
-
-.file-uploaded__image {
-  height: 305px;
-  object-fit: cover;
-}
-
-.file-uploaded-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 10px;
-  margin-bottom: 10px;
-}
-
-.file-uploaded__remove {
-  cursor: pointer;
-  background: url(/admin/assets/svg/upload-remove.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 8px;
-  height: 8px;
-  display: inline-block;
-}
-
-.file-uploaded__remove input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-
-.file-uploaded-image {
-  position: relative;
-}
-
-.file-uploaded.is-deleted .file-uploaded__remove {
-  background: url(/admin/assets/svg/upload-return.svg);
-  width: 8px;
-  height: 11px;
-}
-
-.file-uploaded.is-deleted .file-uploaded__image {
-  filter: blur(3px);
-}
-
-.file-uploaded.is-deleted .file-uploaded-image:before {
-  content: "";
-  background-image: url(/admin/assets/svg/removed.svg);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 57px;
-  height: 60px;
-  z-index: 2;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.file-upload-actions {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-}
-
-.file-uploaded__favorite input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-
-.file-uploaded__favorite > span {
-  width: 11px;
-  height: 10px;
-  background: url(/admin/assets/svg/favorite-gray.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  display: block;
-}
-
-.file-uploaded__favorite input[type="radio"]:checked + span {
-  background: url(/admin/assets/svg/favorite-black.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-
-.users {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 13px;
-}
-
-.user {
-  padding: 30px;
-  background: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.user__name {
-  font-family: var(--museo);
-  display: block;
-  padding-right: 5px;
-}
-
-.user-control {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.user-inputs {
-  width: 560px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.user-inputs-buttons {
-  margin-top: 15px;
-  display: flex;
-  gap: 15px;
-}
-
-.project-top {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 817px;
-  margin-top: -30px;
-}
-
-.project-top-content {
-  position: relative;
-  height: 100%;
-}
-
-.slide-content__description {
-  display: block;
-  font-family: var(--museo250);
-  font-size: 15px;
-  margin-bottom: 20px;
-  line-height: 18px;
-}
-
-.slide-content {
-  color: white;
-  background: rgba(0, 0, 0, 0.75);
-  padding: 40px 40px 20px 40px;
-  border-radius: 10px;
-  position: absolute;
-  bottom: 40px;
-  left: 0;
-  backdrop-filter: blur(2px);
-  width: 560px;
-}
-
-.slide-content__title {
-  display: block;
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-family: var(--museo);
-}
-
-.page-top {
-  padding: 40px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.page-top-back {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-transform: uppercase;
-  font-size: 20px;
-  text-decoration: none;
-  color: #000;
-  font-weight: 500;
-  font-family: var(--museo);
-}
-
-.page-top-info {
-  text-align: right;
-}
-
-.page-top-info__name {
-  display: block;
-  font-size: 30px;
-  font-weight: 500;
-  font-family: var(--museo);
-  margin-bottom: 5px;
-}
-
-.page-top-info__year {
-  display: block;
-  font-size: 15px;
-  color: rgba(0, 0, 0, 0.66);
-}
-
-.project-description {
-  border: 1px dashed rgba(83, 83, 83, 0.5);
-  padding: 30px;
-  margin-bottom: 64px;
-  font-size: 18px;
-  line-height: 25px;
-  @media screen and (max-width: 767px) {
+  .button.square {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0;
-    border: 0;
+  }
+
+  .button.square:disabled {
+    background: #fff;
+    opacity: 0.3;
+  }
+
+  .button.square:disabled:hover {
+    background: #fff;
+    opacity: 0.3;
+  }
+
+  .button.white {
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+  }
+
+  .button--p10 {
+    padding: 0 10px;
+  }
+
+  .button:hover {
+    opacity: 0.8;
+  }
+
+  .button:disabled {
+    background-color: rgba(32, 33, 33, 0.2);
+    cursor: default;
+  }
+
+  .button:disabled:hover {
+    opacity: 1;
+  }
+
+  .input {
+    width: 100%;
+    display: block;
+    background: transparent;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 15px;
+    border: 1px solid rgba(83, 83, 83, 0.5);
+  }
+
+  .block {
+    background: #fff;
+    padding: 30px;
+  }
+
+  .block-title {
+    margin-bottom: 30px;
+    display: block;
+  }
+
+  .subtitle {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-family: var(--museo);
+  }
+
+  .input--logo {
+    padding-left: 42px;
+  }
+
+  .file-upload-component {
+    margin-bottom: 15px;
+  }
+
+  .custom-file-upload {
+    display: flex;
+    align-items: center;
+    padding: 0 57px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid rgba(83, 83, 83, 0.5);
+    color: #000;
+    position: relative;
+  }
+
+  .custom-file-upload:before {
+    content: "";
+    background-image: url(../assets/svg/photo.svg);
+    width: 23px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .custom-file-upload .file-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .file-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  .file-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px dashed rgba(83, 83, 83, 0.5);
+  }
+
+  .file-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .favorite {
+    color: goldenrod;
+  }
+
+  .file-name {
+    flex-grow: 1;
+  }
+
+  .file-input {
+    display: none;
+  }
+
+  .file-list-element__delete {
+    cursor: pointer;
+  }
+
+  .file-list-element__favorite {
+    cursor: pointer;
+  }
+
+  .choices {
+    margin-bottom: 0;
+  }
+
+  .choices[data-type*="select-one"]::after {
+    display: none;
+  }
+
+  .choices[data-type*="select-one"]::before {
+    content: "";
+    background: url("../assets/svg/select-arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 4px;
+  }
+
+  .choices[data-type*="select-one"].is-open::before {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .choices__list--dropdown .choices__item--selectable.is-highlighted,
+  .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    background: #f4f4f4;
+    position: relative;
+  }
+
+  .choices__list--dropdown .choices__item--selectable.is-selected {
+    font-family: var(--museo);
+  }
+
+  .choices__list--dropdown .choices__item--selectable.is-selected:before {
+    content: "";
+    background: url("../assets/svg/select-ok.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 6px;
+  }
+
+  .choices__list--dropdown .choices__item,
+  .choices__list[aria-expanded] .choices__item {
+    font-size: 15px;
+    padding: 16px 20px;
+  }
+
+  .choices__list--single .choices__item {
+    font-size: 15px;
+  }
+
+  .choices__list--single {
+    padding: 0;
+  }
+
+  .choices__inner {
+    border: 1px solid rgba(83, 83, 83, 0.5);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: transparent;
+  }
+
+  .choices.is-open {
+    background: #fff;
+  }
+
+  .checkbox-custom {
+    opacity: 0;
+    position: absolute;
+  }
+
+  .checkbox-custom,
+  .checkbox-custom-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 16px;
+  }
+
+  .checkbox-custom-label {
+    position: relative;
+  }
+
+  .checkbox-custom + .checkbox-custom-label:before {
+    content: "";
+    background: #fff;
+    border: 1px solid rgba(83, 83, 83, 0.5);
+    display: inline-block;
+    vertical-align: middle;
+    width: 19px;
+    height: 19px;
+    margin-right: 14px;
+    text-align: center;
+  }
+
+  .checkbox-custom:checked + .checkbox-custom-label:before {
+    content: "";
+    background-color: rgba(32, 33, 33, 1);
+    background-image: url("../assets/svg/checkbox.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .wrapper-login {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login {
+    background: #fff;
+    width: 800px;
+    height: 800px;
+    padding: 120px 200px;
+  }
+
+  .login__logo {
+    display: block;
+    margin: 0 auto 120px auto;
+  }
+
+  .login-content {
+    width: 402px;
+  }
+
+  .login__input {
+    margin-bottom: 15px;
+  }
+
+  .login-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .content {
+    width: 1160px;
+    margin: auto;
+  }
+
+  .header {
+    background: #fff;
+    margin-bottom: 30px;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-menu {
+    display: flex;
+  }
+
+  .header-menu__link {
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid transparent;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    font-family: var(--museo250);
+    margin: 0 20px;
+    padding: 48px 0;
+  }
+
+  .header-menu__link.active {
+    border-color: #000;
+    font-family: var(--museo);
+  }
+
+  .page-title {
+    font-family: var(--museo);
+    text-transform: uppercase;
+    font-size: 25px;
+  }
+
+  .projects-filter {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 20px;
+    margin-bottom: 30px;
+    align-items: center;
+  }
+
+  .projects-filter-form {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 200px 1fr;
+    gap: 12px;
+  }
+
+  .projects-filter-form-search {
+    position: relative;
+  }
+
+  .projects-filter-search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .projects-list-element {
+    background: #fff;
+    padding: 40px 30px 30px 20px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 180px;
+    gap: 40px;
+    margin-bottom: 15px;
+  }
+
+  .projects-list-element.gray {
+    background: rgba(232, 232, 232, 1);
+  }
+
+  .projects-list-element__type {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .projects-list-element-name {
+    display: flex;
+    font-size: 20px;
+    font-family: var(--museo);
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .projects-list-element-name__favorite {
+    margin-right: 10px;
+  }
+
+  .projects-list-element__year {
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .projects-list-element-content {
+    line-height: 18px;
+  }
+
+  .projects-list-element-control__publish {
+    width: 180px;
+    margin-bottom: 10px;
+  }
+
+  .projects-list-element-control__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pagination {
+    display: flex;
+    gap: 5px;
+  }
+
+  .pagination-element {
+    display: flex;
+    width: 55px;
+    height: 55px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-family: var(--museo);
+    font-size: 20px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+
+  .pagination-element.active {
+    background: #000;
+    color: #fff;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+
+  /* Стили для модального окна */
+  .modal {
+    position: fixed;
+    padding: 30px;
+    background-color: white;
+    width: 340px;
+    text-align: center;
+    z-index: 1000;
+    display: none;
+    border: none;
+  }
+
+  /* Включаем отображение модального окна при открытии поповера */
+  .modal:popover-open {
+    display: block;
+  }
+
+  .modal__title {
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+    font-family: var(--museo);
+  }
+
+  .modal__description {
+    line-height: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .modal-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    & > * {
+      width: 100%;
+    }
+  }
+
+  .modal-buttons input {
+    display: none;
+  }
+
+  .create-line {
+    display: grid;
+    grid-template-columns: 1fr 230px;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .textarea {
+    width: 100%;
+    border: 1px solid rgba(83, 83, 83, 0.5);
+    height: 200px;
+    margin-bottom: 15px;
+    resize: none;
+    padding: 15px 20px;
+  }
+
+  .create-bottom-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .create-bottom-field__required {
+    color: #bd1f1f;
+  }
+
+  .create-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  .create-bottom-right {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 15px;
+  }
+
+  .files-uploaded {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px 3px;
+  }
+
+  .file-uploaded__image {
+    height: 305px;
+    object-fit: cover;
+  }
+
+  .file-uploaded-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+
+  .file-uploaded__remove {
+    cursor: pointer;
+    background: url(../assets/svg/upload-remove.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+  }
+
+  .file-uploaded__remove input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .file-uploaded-image {
+    position: relative;
+  }
+
+  .file-uploaded.is-deleted .file-uploaded__remove {
+    background: url(..../assets/svg/upload-return.svg);
+    width: 8px;
+    height: 11px;
+  }
+
+  .file-uploaded.is-deleted .file-uploaded__image {
+    filter: blur(3px);
+  }
+
+  .file-uploaded.is-deleted .file-uploaded-image:before {
+    content: "";
+    background-image: url(../assets/svg/removed.svg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 57px;
+    height: 60px;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .file-upload-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .file-uploaded__favorite input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .file-uploaded__favorite > span {
+    width: 11px;
+    height: 10px;
+    background: url(../assets/svg/favorite-gray.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+  }
+
+  .file-uploaded__favorite input[type="radio"]:checked + span {
+    background: url(../assets/svg/favorite-black.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  .users {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+  }
+
+  .user {
+    padding: 30px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .user__name {
+    font-family: var(--museo);
+    display: block;
+    padding-right: 5px;
+  }
+
+  .user-control {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .user-inputs {
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .user-inputs-buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+  }
+
+  .project-top {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 817px;
+    margin-top: -30px;
+  }
+
+  .project-top-content {
+    position: relative;
+    height: 100%;
+  }
+
+  .slide-content__description {
+    display: block;
+    font-family: var(--museo250);
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 18px;
+  }
+
+  .slide-content {
+    color: white;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 40px 40px 20px 40px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    backdrop-filter: blur(2px);
+    width: 560px;
+  }
+
+  .slide-content__title {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: var(--museo);
+  }
+
+  .page-top {
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .page-top-back {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-family: var(--museo);
+  }
+
+  .page-top-info {
+    text-align: right;
+  }
+
+  .page-top-info__name {
+    display: block;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: var(--museo);
+    margin-bottom: 5px;
+  }
+
+  .page-top-info__year {
+    display: block;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.66);
+  }
+
+  .project-description {
+    border: 1px dashed rgba(83, 83, 83, 0.5);
+    padding: 30px;
+    margin-bottom: 64px;
+    font-size: 18px;
+    line-height: 25px;
+    @media screen and (max-width: 767px) {
+      padding: 0;
+      border: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .project-title {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: var(--museo);
+  }
+
+  .project-photos {
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(3, 1fr);
     margin-bottom: 20px;
   }
-}
 
-.project-title {
-  display: block;
-  margin-bottom: 20px;
-  font-size: 20px;
-  font-weight: 500;
-  font-family: var(--museo);
-}
+  .project-photos a {
+    display: block;
+  }
 
-.project-photos {
-  display: grid;
-  gap: 3px;
-  grid-template-columns: repeat(3, 1fr);
-  margin-bottom: 20px;
-}
+  .project-photos a img {
+    height: 323px;
+    object-fit: cover;
+    display: block;
+  }
 
-.project-photos a {
-  display: block;
-}
+  #panorama {
+    width: 100%;
+    height: 600px;
+    margin-bottom: 3px;
+  }
 
-.project-photos a img {
-  height: 323px;
-  object-fit: cover;
-  display: block;
-}
+  .panorama-list {
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+  }
 
-#panorama {
-  width: 100%;
-  height: 600px;
-  margin-bottom: 3px;
-}
+  .panorama-list__element {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    cursor: pointer;
+  }
 
-.panorama-list {
-  display: flex;
-  gap: 3px;
-  flex-wrap: wrap;
-}
+  .project-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+  }
 
-.panorama-list__element {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  cursor: pointer;
-    opacity: 0.5;
-}
+  .project-bottom-right {
+    display: flex;
+    gap: 15px;
+  }
 
-.panorama-list__element.active {
-    opacity: 1;
-}
+  .employee {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    height: 110px;
+    align-items: center;
+    margin-bottom: 5px;
+  }
 
-.project-bottom {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 35px;
-}
+  .employee__img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+  }
 
-.project-bottom-right {
-  display: flex;
-  gap: 15px;
-}
+  .employee-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 30px;
+  }
+
+  .employee-content__name {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 18px;
+    font-family: var(--museo);
+  }
+
+  .upload-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid rgba(83, 83, 83, 0.5);
+    cursor: pointer;
+    width: 115px;
+    height: 115px;
+    text-align: center;
+    position: relative;
+    background: url(../assets/svg/photo.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .upload-container-img {
+    object-fit: cover;
+    width: 115px;
+    height: 115px;
+    display: none;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .employee-form {
+    display: grid;
+    grid-template-columns: 115px 1fr;
+    margin-bottom: 15px;
+    gap: 15px;
+  }
+
+  .employee-info-photo {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .upload-container-edit-img {
+    object-fit: cover;
+    width: 115px;
+    height: 115px;
+    display: block;
+  }
+
+  .upload-container-remove {
+    display: flex;
+    height: 14px;
+    width: 14px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    z-index: 1;
+    background: #fff;
+  }
