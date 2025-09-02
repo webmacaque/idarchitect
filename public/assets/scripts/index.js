@@ -78,6 +78,10 @@ function menu() {
 
     const swiper = new Swiper(".swiper-container.desktop", {
       loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
       pagination: {
         el: ".swiper-container.desktop .swiper-pagination",
         clickable: true,
@@ -98,6 +102,10 @@ function menu() {
 
     const swiperM = new Swiper(".swiper-container.mobile", {
       loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
       pagination: {
         el: ".swiper-container.mobile .swiper-pagination",
         clickable: true,
