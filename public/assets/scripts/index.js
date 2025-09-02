@@ -76,10 +76,12 @@ function menu() {
       // Your custom options
     });
 
+    const delay = 8000;
+
     const swiper = new Swiper(".swiper-container.desktop", {
       loop: true,
       autoplay: {
-        delay: 3000,
+        delay,
         disableOnInteraction: false,
       },
       pagination: {
@@ -103,7 +105,7 @@ function menu() {
     const swiperM = new Swiper(".swiper-container.mobile", {
       loop: true,
       autoplay: {
-        delay: 8000,
+        delay,
         disableOnInteraction: false,
       },
       pagination: {
