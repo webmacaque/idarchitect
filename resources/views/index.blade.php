@@ -165,7 +165,6 @@
         </div>
         @endforeach
     </section>
-    <img class="team-bg" src="/assets/images/team.jpg" alt="">
     <section id="team" class="team">
         <div class="content">
             <h2 class="title white team__title">Команда</h2>
