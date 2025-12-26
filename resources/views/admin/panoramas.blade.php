@@ -38,10 +38,7 @@
                             </a>
                         @endif
                         <button type="button" class="button square white copy-link-btn" title="Копировать ссылку" data-url="{{ $panorama->isTour() ? route('panorama-tour', $panorama->id) : route('panorama-single', $panorama->id) }}">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
+                            <img src="/admin/assets/svg/copy.svg" alt="copy" />
                         </button>
                         <a href="#" class="button square white open-modal" title="Удалить" data-remove="{{ $panorama->id }}">
                             <img src="/admin/assets/svg/remove.svg" alt="remove" />
