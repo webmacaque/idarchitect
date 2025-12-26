@@ -3,8 +3,10 @@
 use App\Http\Controllers\AdminProjectController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminEmployeeController;
+use App\Http\Controllers\AdminPanoramaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\PanoramaController;
 use App\Http\Middleware\OnlyAuth;
 use Illuminate\Support\Facades\Route;
 
@@ -13,12 +15,14 @@ Route::get('/', [ProjectController::class, 'index'])->name('index');
 Route::get('/projects/{typeSlug}/project/{slug}', [ProjectController::class, 'project'])->name('project');
 Route::get('/projects/{slug}', [ProjectController::class, 'projectType'])->name('project-type');
 
+Route::get('/panorama/tour/{id}', [PanoramaController::class, 'tour'])->name('panorama-tour')->where('id', '[0-9]+');
+Route::get('/panorama/{id}', [PanoramaController::class, 'panorama'])->name('panorama-single')->where('id', '[0-9]+');
+
 Route::redirect('/login', '/admin/login');
 Route::get('/admin/login', [AuthController::class, 'loginForm'])->name('login-form');
 Route::post('/admin/login', [AuthController::class, 'login'])->name('login-action');
 
 Route::middleware('auth')->group(function() {
-    // Projects routes
     Route::get('/admin/projects', [AdminProjectController::class, 'projects'])->name('admin-projects');
     Route::get('/admin/projects/create', [AdminProjectController::class, 'createForm'])->name('admin-projects-create-form');
     Route::get('/admin/projects/{id}', [AdminProjectController::class, 'project'])->name('admin-projects-item')->where('id', '[0-9]+');
@@ -48,11 +52,16 @@ Route::middleware('auth')->group(function() {
     Route::delete('/admin/employees/delete', [AdminEmployeeController::class, 'destroy'])->name('admin-employees-delete');
     Route::post('/admin/employees/{id}/reorder', [AdminEmployeeController::class, 'reorder'])->name('admin-employees-reorder')->where('id', '[0-9]+');
 
+    // Panoramas routes
+    Route::get('/admin/panoramas', [AdminPanoramaController::class, 'index'])->name('admin-panoramas');
+    Route::get('/admin/panoramas/create/tour', [AdminPanoramaController::class, 'createTour'])->name('admin-panoramas-create-tour');
+    Route::get('/admin/panoramas/create/panorama', [AdminPanoramaController::class, 'createPanorama'])->name('admin-panoramas-create-panorama');
+    Route::get('/admin/panoramas/{id}/edit', [AdminPanoramaController::class, 'editTour'])->name('admin-panoramas-edit')->where('id', '[0-9]+');
+
+    Route::post('/admin/panoramas/store/tour', [AdminPanoramaController::class, 'storeTour'])->name('admin-panoramas-store-tour');
+    Route::post('/admin/panoramas/store/panorama', [AdminPanoramaController::class, 'storePanorama'])->name('admin-panoramas-store-panorama');
+    Route::post('/admin/panoramas/{id}/update', [AdminPanoramaController::class, 'updateTour'])->name('admin-panoramas-update')->where('id', '[0-9]+');
+    Route::post('/admin/panoramas/delete', [AdminPanoramaController::class, 'destroy'])->name('admin-panoramas-delete');
+
     Route::get('/admin/logout', [AuthController::class, 'logout'])->name('logout');
 });
-
-
-
-
-
-

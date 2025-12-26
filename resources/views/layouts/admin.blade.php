@@ -21,9 +21,10 @@
             <img src="/admin/assets/svg/logo.svg" alt="logo" />
         </a>
         <nav class="header-menu">
-            <a href="{{route('admin-projects')}}" class="header-menu__link @yield('menu_projects','')">Список проектов</a>
-            <a href="{{route('admin-users')}}" class="header-menu__link @yield('menu_users','')">Список администраторов</a>
-            <a href="{{route('admin-employees')}}" class="header-menu__link @yield('menu_employees','')">Список сотрудников</a>
+            <a href="{{route('admin-projects')}}" class="header-menu__link @yield('menu_projects','')">Проекты</a>
+            <a href="{{route('admin-users')}}" class="header-menu__link @yield('menu_users','')">Администраторы</a>
+            <a href="{{route('admin-employees')}}" class="header-menu__link @yield('menu_employees','')">Сотрудники</a>
+            <a href="{{route('admin-panoramas')}}" class="header-menu__link @yield('menu_panoramas','')">Панорамы</a>
             <a href="{{route('logout')}}" class="header-menu__link ">Выйти</a>
         </nav>
     </div>
@@ -42,4 +43,3 @@
 
 </body>
 </html>
-
