@@ -32,6 +32,20 @@
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
 
+            <select
+                class="input @error('role') is-invalid @enderror"
+                name="role"
+                id="user-role"
+                required
+            >
+                @foreach(\App\Models\User::ROLES as $value => $label)
+                    <option value="{{ $value }}" {{ old('role', $user->role) === $value ? 'selected' : '' }}>{{ $label }}</option>
+                @endforeach
+            </select>
+            @error('role')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+
             <div class="user-inputs-buttons">
                 <button type="submit" class="button">Сохранить</button>
                 <a href="{{ route('admin-users') }}" class="button white">Отмена</a>

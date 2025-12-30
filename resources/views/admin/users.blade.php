@@ -11,6 +11,7 @@
         @foreach($users as $user)
             <div class="user">
                 <span class="user__name">{{ $user->login }}</span>
+                <span class="user__role">{{ $user->getRoleName() }}</span>
                 <div class="user-control">
                     <a href="{{ route('admin-users-edit', $user->id) }}" class="button square white" title="Редактировать">
                         <img src="/admin/assets/svg/edit.svg" />
@@ -59,4 +60,3 @@
         });
     </script>
 @endsection
-

@@ -21,10 +21,18 @@
             <img src="/admin/assets/svg/logo.svg" alt="logo" />
         </a>
         <nav class="header-menu">
-            <a href="{{route('admin-projects')}}" class="header-menu__link @yield('menu_projects','')">Проекты</a>
-            <a href="{{route('admin-users')}}" class="header-menu__link @yield('menu_users','')">Администраторы</a>
-            <a href="{{route('admin-employees')}}" class="header-menu__link @yield('menu_employees','')">Сотрудники</a>
-            <a href="{{route('admin-panoramas')}}" class="header-menu__link @yield('menu_panoramas','')">Панорамы</a>
+            @if(auth()->user()->hasAccessTo('projects'))
+                <a href="{{route('admin-projects')}}" class="header-menu__link @yield('menu_projects','')">Проекты</a>
+            @endif
+            @if(auth()->user()->hasAccessTo('users'))
+                <a href="{{route('admin-users')}}" class="header-menu__link @yield('menu_users','')">Администраторы</a>
+            @endif
+            @if(auth()->user()->hasAccessTo('employees'))
+                <a href="{{route('admin-employees')}}" class="header-menu__link @yield('menu_employees','')">Сотрудники</a>
+            @endif
+            @if(auth()->user()->hasAccessTo('panoramas'))
+                <a href="{{route('admin-panoramas')}}" class="header-menu__link @yield('menu_panoramas','')">Панорамы</a>
+            @endif
             <a href="{{route('logout')}}" class="header-menu__link ">Выйти</a>
         </nav>
     </div>

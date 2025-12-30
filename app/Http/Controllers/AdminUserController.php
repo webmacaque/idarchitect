@@ -33,11 +33,13 @@ class AdminUserController extends Controller
     {
         $validated = $request->validate([
             'login' => 'required',
-            'password' => 'nullable'
+            'password' => 'nullable',
+            'role' => 'required|in:' . implode(',', array_keys(User::ROLES))
         ]);
 
         $user = User::find($id);
         $user->login = $request->login;
+        $user->role = $request->role;
 
         if ($request->filled('password')) {
             $user->password = Hash::make($request->password);
@@ -52,12 +54,14 @@ class AdminUserController extends Controller
     {
         $validated = $request->validate([
            'login' => 'required|unique:users',
-           'password' => 'required'
+           'password' => 'required',
+           'role' => 'required|in:' . implode(',', array_keys(User::ROLES))
         ]);
 
         $user = new User();
         $user->login = $request->login;
         $user->password = Hash::make($request->password);
+        $user->role = $request->role;
         $user->save();
 
         return redirect()->route('admin-users');
