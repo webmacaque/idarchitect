@@ -14,8 +14,8 @@ Route::get('/', [ProjectController::class, 'index'])->name('index');
 Route::get('/projects/{typeSlug}/project/{slug}', [ProjectController::class, 'project'])->name('project');
 Route::get('/projects/{slug}', [ProjectController::class, 'projectType'])->name('project-type');
 
-Route::get('/panorama/tour/{id}', [PanoramaController::class, 'tour'])->name('panorama-tour')->where('id', '[0-9]+');
-Route::get('/panorama/{id}', [PanoramaController::class, 'panorama'])->name('panorama-single')->where('id', '[0-9]+');
+Route::get('/panorama/tour/{hash}', [PanoramaController::class, 'tour'])->name('panorama-tour')->where('hash', '[A-Za-z0-9]{16}');
+Route::get('/panorama/{hash}', [PanoramaController::class, 'panorama'])->name('panorama-single')->where('hash', '[A-Za-z0-9]{16}');
 
 Route::redirect('/login', '/admin/login');
 Route::get('/admin/login', [AuthController::class, 'loginForm'])->name('login-form');
