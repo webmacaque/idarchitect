@@ -1153,7 +1153,7 @@
 
   .cookie-banner {
     position: fixed;
-    top: 117px;
+    top: 145px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 101;
@@ -1162,7 +1162,7 @@
     background: #fff;
     border: 1px solid #d0d0d0;
     @media screen and (max-width: 1024px) {
-      top: 109px;
+      top: 133px;
       width: calc(100% - 40px);
     }
   }
@@ -1184,8 +1184,8 @@
   .cookie-banner__text {
     margin: 0;
     font-family: var(--museo250);
-    font-size: 13px;
-    line-height: 1.4;
+    font-size: 15px;
+    line-height: 1.45;
     color: #202121;
   }
 
@@ -1198,7 +1198,9 @@
   .cookie-banner__accept {
     flex-shrink: 0;
     justify-content: center;
-    min-width: 120px;
+    min-width: 130px;
+    height: 44px;
+    font-size: 12px;
   }
 
   .cookie-modal {
@@ -1248,7 +1250,7 @@
   .cookie-modal__title {
     margin: 0;
     font-family: var(--museo);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 1.3;
     color: #000;
@@ -1270,7 +1272,7 @@
 
   .cookie-modal__body {
     font-family: var(--museo250);
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.5;
     color: #000;
   }
