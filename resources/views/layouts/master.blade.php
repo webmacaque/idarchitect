@@ -60,6 +60,7 @@
         />
     </div>
 </header>
+    @include('partials.cookie-consent')
     @yield('content')
 <footer id="contacts">
     <div class="content footer-content">

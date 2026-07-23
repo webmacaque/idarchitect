@@ -56,8 +56,62 @@ function menu() {
     }
   }
 
+  function cookieConsent() {
+    const STORAGE_KEY = "cookie_consent";
+    const banner = document.getElementById("cookie-banner");
+    const modal = document.getElementById("cookie-modal");
+
+    if (!banner || !modal) {
+      return;
+    }
+
+    const openModal = () => {
+      modal.hidden = false;
+    };
+
+    const closeModal = () => {
+      modal.hidden = true;
+    };
+
+    const accept = () => {
+      localStorage.setItem(STORAGE_KEY, "1");
+      banner.hidden = true;
+      closeModal();
+    };
+
+    if (!localStorage.getItem(STORAGE_KEY)) {
+      banner.hidden = false;
+    }
+
+    banner.querySelectorAll("[data-cookie-open]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    banner.querySelectorAll("[data-cookie-privacy]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+      });
+    });
+
+    banner.querySelectorAll("[data-cookie-accept]").forEach((el) => {
+      el.addEventListener("click", accept);
+    });
+
+    modal.querySelectorAll("[data-cookie-close]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeModal();
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     const mobileMenuToggleBurger = document.querySelector(".header-burger");
+
+    cookieConsent();
 
     let map;
     let center = new google.maps.LatLng(46.351751, 48.043511);

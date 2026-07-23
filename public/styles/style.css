@@ -1150,3 +1150,148 @@
       display: none;
     }
   }
+
+  .cookie-banner {
+    position: fixed;
+    top: 117px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 101;
+    width: calc(100% - 80px);
+    max-width: 1160px;
+    background: #fff;
+    border: 1px solid #d0d0d0;
+    @media screen and (max-width: 1024px) {
+      top: 109px;
+      width: calc(100% - 40px);
+    }
+  }
+
+  .cookie-banner__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 24px;
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+      padding: 16px;
+    }
+  }
+
+  .cookie-banner__text {
+    margin: 0;
+    font-family: var(--museo250);
+    font-size: 13px;
+    line-height: 1.4;
+    color: #202121;
+  }
+
+  .cookie-banner__link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .cookie-banner__accept {
+    flex-shrink: 0;
+    justify-content: center;
+    min-width: 120px;
+  }
+
+  .cookie-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .cookie-modal[hidden] {
+    display: none;
+  }
+
+  .cookie-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .cookie-modal__dialog {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 520px;
+    max-height: min(80vh, 640px);
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #000;
+    padding: 32px 36px 36px;
+    @media screen and (max-width: 767px) {
+      padding: 24px;
+      max-height: 85vh;
+    }
+  }
+
+  .cookie-modal__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .cookie-modal__title {
+    margin: 0;
+    font-family: var(--museo);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #000;
+  }
+
+  .cookie-modal__close {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    margin: -4px -8px 0 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #000;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .cookie-modal__body {
+    font-family: var(--museo250);
+    font-size: 14px;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  .cookie-modal__body p {
+    margin: 0 0 16px;
+  }
+
+  .cookie-modal__body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .cookie-modal__body ul {
+    margin: 0 0 16px;
+    padding-left: 22px;
+  }
+
+  .cookie-modal__body li {
+    margin-bottom: 6px;
+  }
+
+  .cookie-modal__body li:last-child {
+    margin-bottom: 0;
+  }
