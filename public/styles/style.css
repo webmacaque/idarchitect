@@ -1157,21 +1157,21 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 101;
-    width: calc(100% - 80px);
-    max-width: 1160px;
+    width: fit-content;
+    max-width: calc(100% - 80px);
     background: #fff;
     border: 1px solid #d0d0d0;
     @media screen and (max-width: 1024px) {
       top: 133px;
-      width: calc(100% - 40px);
+      max-width: calc(100% - 40px);
     }
   }
 
   .cookie-banner__inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+    justify-content: flex-start;
+    gap: 32px;
     padding: 16px 24px;
     @media screen and (max-width: 767px) {
       flex-direction: column;
