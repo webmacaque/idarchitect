@@ -11,7 +11,7 @@
 @section('headerStyles')
     <link rel="stylesheet" href="/styles/normalize.css" />
     <link rel="stylesheet" href="/styles/fonts.css" />
-    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/style.css?v={{ filemtime(public_path('styles/style.css')) }}" />
 @show
     <title>ID Architects</title>
 </head>
