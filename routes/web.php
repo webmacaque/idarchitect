@@ -11,6 +11,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProjectController::class, 'index'])->name('index');
 
+Route::view('/cookie', 'legal', [
+    'title' => 'Политика использования файлов cookie',
+    'body' => 'partials.policy-cookie',
+])->name('cookie-policy');
+
+Route::view('/privacy', 'legal', [
+    'title' => 'Политика в отношении обработки персональных данных',
+    'body' => 'partials.policy-privacy',
+])->name('privacy-policy');
+
 Route::get('/projects/{typeSlug}/project/{slug}', [ProjectController::class, 'project'])->name('project');
 Route::get('/projects/{slug}', [ProjectController::class, 'projectType'])->name('project-type');
 

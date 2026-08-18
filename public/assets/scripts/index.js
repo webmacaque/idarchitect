@@ -59,24 +59,27 @@ function menu() {
   function cookieConsent() {
     const STORAGE_KEY = "cookie_consent";
     const banner = document.getElementById("cookie-banner");
-    const modal = document.getElementById("cookie-modal");
+    const cookieModal = document.getElementById("cookie-modal");
+    const privacyModal = document.getElementById("privacy-modal");
 
-    if (!banner || !modal) {
+    if (!banner || !cookieModal || !privacyModal) {
       return;
     }
 
-    const openModal = () => {
-      modal.hidden = false;
+    const closeModals = () => {
+      cookieModal.hidden = true;
+      privacyModal.hidden = true;
     };
 
-    const closeModal = () => {
-      modal.hidden = true;
+    const openModal = (modal) => {
+      closeModals();
+      modal.hidden = false;
     };
 
     const accept = () => {
       localStorage.setItem(STORAGE_KEY, "1");
       banner.hidden = true;
-      closeModal();
+      closeModals();
     };
 
     if (!localStorage.getItem(STORAGE_KEY)) {
@@ -86,13 +89,14 @@ function menu() {
     banner.querySelectorAll("[data-cookie-open]").forEach((el) => {
       el.addEventListener("click", (e) => {
         e.preventDefault();
-        openModal();
+        openModal(cookieModal);
       });
     });
 
-    banner.querySelectorAll("[data-cookie-privacy]").forEach((el) => {
+    banner.querySelectorAll("[data-privacy-open]").forEach((el) => {
       el.addEventListener("click", (e) => {
         e.preventDefault();
+        openModal(privacyModal);
       });
     });
 
@@ -100,10 +104,10 @@ function menu() {
       el.addEventListener("click", accept);
     });
 
-    modal.querySelectorAll("[data-cookie-close]").forEach((el) => {
+    document.querySelectorAll("[data-modal-close]").forEach((el) => {
       el.addEventListener("click", (e) => {
         e.preventDefault();
-        closeModal();
+        closeModals();
       });
     });
   }
@@ -374,7 +378,9 @@ function menu() {
       map.setOptions({ styles: styles });
     }
 
-    initializeMap();
+    if (document.getElementById("map")) {
+      initializeMap();
+    }
   });
 
   window.history.scrollRestoration = "manual";
