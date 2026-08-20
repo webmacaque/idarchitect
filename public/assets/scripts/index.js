@@ -82,7 +82,7 @@ function menu() {
       closeModals();
     };
 
-    if (!localStorage.getItem(STORAGE_KEY)) {
+    if (localStorage.getItem(STORAGE_KEY) !== "1") {
       banner.hidden = false;
     }
 
